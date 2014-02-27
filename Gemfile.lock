@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activemodel (4.0.3)
       activesupport (= 4.0.3)
@@ -20,10 +20,12 @@ GEM
     atomic (1.1.14)
     bond (0.4.3)
     builder (3.1.4)
+    haml (4.0.5)
+      tilt
     i18n (0.6.9)
     minitest (4.7.5)
     multi_json (1.8.4)
-    mysql2 (0.3.15)
+    pg (0.17.1)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -37,6 +39,7 @@ GEM
       rack (>= 1.0)
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
+    sass (3.2.14)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
@@ -61,7 +64,9 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  mysql2
+  haml
+  pg
+  sass
   shotgun
   sinatra
   sinatra-activerecord

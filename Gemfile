@@ -1,9 +1,11 @@
-source :rubygems
+source "https://rubygems.org"
  
 gem "sinatra"
-gem "mysql2"
+gem "pg"
 gem "activerecord"
 gem "sinatra-activerecord"
+gem "sass"
+gem "haml"
  
 group :development do
   gem "shotgun"

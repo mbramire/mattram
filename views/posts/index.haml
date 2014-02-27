@@ -1,0 +1,8 @@
+%h1 
+  Welcome to my blog!
+%ul
+- @posts.each do |post|
+  %li
+    %h2
+      %a{ href: "/posts/#{post.id}" }= post.title 
+    %span= pretty_date(post.created_at)

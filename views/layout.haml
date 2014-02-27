@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %title= title 
+    %link{ rel: 'stylesheet', href: '/stylesheets/style.css' }
+  %body
+    %ul
+      %li 
+        %a{ href: "/" } Home
+      %li 
+        %a{ href: "/about" } About Me
+      %li 
+        %a{ href: "/posts/new" } New Post                            
+    - if post_show_page?
+      %li 
+        %a{ href: "/posts/#{@post.id}/edit" } Edit Post
+      %li 
+        = delete_post_button(@post.id)
+    = yield

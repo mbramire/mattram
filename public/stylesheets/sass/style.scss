@@ -1,3 +1,4 @@
+@import "mixins_variables";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -47,8 +48,245 @@ table {
 
 /* end reset */
 
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
+
 /* global */
 body {
   background: black;
   color: white;
+}
+
+/* typography */
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.tiny-txt {
+  font-size: .8em;
+}
+
+.bold-txt {
+  font-weight: 600;
+}
+
+h1 {
+
+  &.x-large {
+    font-size: 2.5em;
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.25em;
+  color: $primary;
+}
+
+/* buttons and links */
+
+.btn {
+  @include round-corners;
+  @include cursor;
+  border: none;
+  background: $primary;
+  color: white;
+  padding: 10px 20px;
+
+  &:hover {
+    background: lighten($primary, 10%);
+  }
+}
+
+/* forms */
+
+input, textarea {
+  @include round-corners;
+  border: none;
+  background: lighten(gray, 45%);
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+.user-icon {
+  color: gray;
+  margin-right: 5px;
+  padding-top: 9px;
+}
+
+.error-list {
+  li {
+    margin-right: 10px;
+    font-size: .8em;
+    color: red;
+    float: left;
+  }
+}
+
+/* layout */
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.main-container {
+  background: white;
+  width: 100%;
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.trans-white-row-full {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.trans-black-row-full {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.black-row-full {
+  width: 100%;
+  background: black;
+}
+
+.row {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.span-3 {
+  float: left;
+  width: 37.5%;
+}
+
+.span-5 {
+  float: left;
+  width: 62.5%; 
+}
+/* surgical */
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-top-large {
+  margin-top: 40px;
+}
+
+.pad-all {
+  padding: 10px;
+}
+
+.pad-right {
+  padding-right: 10px;
+}
+
+/* post page */
+
+.title-container {
+  height: 75px;
+
+  h1 {
+   line-height: 1.5em;
+   margin-left: 115px;
+  }
+}
+
+.date-container {
+  height: 25px;
+
+  p {
+    padding-left: 115px;
+    line-height: 1.5em;
+  }
+}
+
+.portrait {
+  overflow: hidden;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: url("/images/portrait.jpg");
+  background-size: 100px
+}
+
+.content {
+  color: black;
+  background: white;
+  padding: 20px;
+  line-height: 1.5em;
+}
+
+.comment-container {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $primary;
+
+  .user-name {
+    background: $primary;
+    color: white;
+    padding-left: 5px;
+  }
+
+  p {
+    font-size: .75em;
+    margin-top: 5px;
+  }
+
+  &:first-of-type {
+    border-top: 1px solid $primary;
+    margin-top: 15px;
+  }
+}
+/* header */
+
+.header {
+  color: white;
+  overflow: auto;
+
+  .main-logo {
+    padding: 15px;
+    float: left;
+  }
+
+  li {
+    float: right;
+    padding: 25px 20px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background: $primary;
+      color: white;
+    }
+  }
 }

@@ -1,0 +1,12 @@
+$primary: rgb(78, 177, 188);
+
+@mixin round-corners {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@mixin cursor {
+  cursor: pointer;
+  cursor: hand;
+}

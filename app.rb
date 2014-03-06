@@ -4,10 +4,18 @@ require "sinatra/activerecord"
 set :database, ENV['DATABASE_URL'] || 'postgres://localhost/bridge_development'
 
 class Post < ActiveRecord::Base
-  validates :title, presence: true, length: { minimum: 3 }
+  validates :title, presence: true
   validates :body, presence: true
+
+  has_many :comments
 end
 
+class Comment < ActiveRecord::Base
+  validates :name, presence: true
+  validates :body, presence: true
+
+  belongs_to :post
+end
 
 helpers do
   # If @title is assigned, add it to the page's title.
@@ -22,7 +30,7 @@ helpers do
   # Format the Ruby Time object returned from a post's created_at method
   # into a string that looks like this: 06 Jan 2012
   def pretty_date(time)
-   time.strftime("%d %b %Y")
+   time.strftime("%B %d, %Y")
   end
 
   def post_show_page?
@@ -38,7 +46,7 @@ end
 # Get all of our routes
 get "/" do
   @posts = Post.order("created_at DESC")
-  haml :"posts/index"
+  haml :"pages/welcome"
 end
  
 # Get the New Post form
@@ -47,7 +55,11 @@ get "/posts/new" do
   @post = Post.new
   haml :"posts/new"
 end
- 
+
+get "/posts" do
+  @posts = Post.order("created_at DESC")
+  haml :"posts/index"
+end 
 # The New Post form sends a POST request (storing data) here
 # where we try to create the post it sent in its params hash.
 # If successful, redirect to that post. Otherwise, render the "posts/new"
@@ -66,6 +78,7 @@ end
 get "/posts/:id" do
   @post = Post.find(params[:id])
   @title = @post.title
+  @comment = Comment.new
   haml :"posts/show"
 end
  
@@ -93,6 +106,17 @@ end
 delete "/posts/:id" do
   @post = Post.find(params[:id]).destroy
   redirect "/"
+end
+
+#creates comments
+post "/post/:id/comments" do
+  @comment = Comment.new(params[:comment])
+  @post = Post.find(params[:id])
+  if @comment.save
+    redirect "posts/#{@post.id}"
+  else
+    haml :"posts/show"
+  end
 end
  
 # Our About Me page.

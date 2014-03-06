@@ -1,4 +1,47 @@
-%h1
-  = @post.title
-%p
-  = @post.body
+.black-row-full.margin-top-large
+  .row.title-container
+    .portrait
+    %h1.x-large
+      = @post.title
+.trans-black-row-full
+  .row.date-container.tiny-txt
+    %p 
+      = pretty_date(@post.created_at)
+.trans-white-row-full
+  .row.content  
+    %p
+      = @post.body
+    
+    %h2.margin-top-large
+      %i.fa.fa-comment
+      comments
+
+    - @post.comments.each do |c|
+      .comment-container
+        .user-name
+          %i.fa.fa-user.fa-inverse
+          %span.bold-txt
+            = c.name
+          said on 
+          = pretty_date(c.created_at)
+        %p
+          = c.body
+
+    .clear
+      %h3.margin-top
+        leave a reply
+      %form{ action: "/post/#{@post.id}/comments", method: "post" }
+        = haml :"shared/errors", locals: {obj: @comment}
+
+        %input{ type: "hidden", name: "comment[post_id]", value: "#{@post.id}" }
+
+        %label{ for: "comment_body" }
+        %textarea#post_body.pull-right{ name: "comment[body]", rows: "5" }
+          = @comment.body
+        %br
+
+        %input.btn.pull-right{ type: "submit", value: "comment" }
+
+        %input.pull-right{ id: "comment_name", name: "comment[name]", type: "text", value: "#{@comment.name}"}
+        %label.pull-right{ for: "comment_name" }
+          %i.fa.fa-user.user-icon

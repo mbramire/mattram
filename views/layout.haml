@@ -3,17 +3,10 @@
   %head
     %title= title 
     %link{ rel: 'stylesheet', href: '/stylesheets/style.css' }
+    %link{ href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel: "stylesheet" }
+    %link{ href: 'http://fonts.googleapis.com/css?family=Titillium+Web:200,300,600', rel: 'stylesheet', type: 'text/css' }
   %body
-    %ul
-      %li 
-        %a{ href: "/" } Home
-      %li 
-        %a{ href: "/about" } About Me
-      %li 
-        %a{ href: "/posts/new" } New Post                            
-    - if post_show_page?
-      %li 
-        %a{ href: "/posts/#{@post.id}/edit" } Edit Post
-      %li 
-        = delete_post_button(@post.id)
-    = yield
+    = haml :"shared/top_nav"
+    .main-container
+      .trans-white-row-full.pad-all
+      = yield

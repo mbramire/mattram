@@ -8,4 +8,9 @@
 .trans-white-row-full
   .row.content  
     %p
-      You found me!
+      During my daily web development grind, I generally run into some type of issue, problem, or occasionally, conudrum. So far I have been fortunate enough to figure things out, generally with the help of the hyper-intellectual web community. Naturally, as I research these issues, I come across all sorts of cool, helpfull tidbits of web development knowledge.
+    %p 
+      So heres the plan... I'd like to start sharing these little "tidbits", in the form of brief, easy-to-read, posts - short but sweet. Most of the stuff I'll be posting about will be related to ruby, html, css, mostly rails related components. I hope you enjoy the content, and by all means, please leave a comment if you like to spin up a discussion, dissect my post, or point out just how wrong I am (don't worry I've got pretty thick skin). Hope you enjoy the content!
+    %h1 Recent Posts
+    - @posts.each do |r|
+      = haml :"/posts/recent_post", locals: {post: r}  

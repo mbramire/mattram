@@ -6,6 +6,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "sass"
 gem "haml"
+gem "carrierwave"
  
 group :development do
   gem "shotgun"

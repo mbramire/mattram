@@ -1,4 +1,10 @@
-%img.post-category
-= post.title
-= pretty_date(post.created_at)
-= truncate(post.body)
+%a{ href: "/posts/#{post.id}", alt: "#{post.title}"}
+  .gray-cont
+    %img.med-icon.pull-left{ src: (post.category.image) }
+    .preview-cont 
+      %h2
+        = post.title
+      %span.tiny-txt
+        = pretty_date(post.created_at)
+      %p 
+        = truncate(post.body)

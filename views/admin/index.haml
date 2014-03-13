@@ -12,6 +12,9 @@
             |
             %span
               = pretty_date(post.created_at)
+          |
+          %a{ href: "/posts/#{post.id}"}
+            View
 
     %a.btn{ href: "/admin/posts/new" } 
       New Post

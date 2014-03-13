@@ -7,6 +7,7 @@ gem "sinatra-activerecord"
 gem "sass"
 gem "haml"
 gem "carrierwave"
+gem 'sinatra-authentication'
  
 group :development do
   gem "shotgun"

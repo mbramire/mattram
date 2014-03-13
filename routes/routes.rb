@@ -6,21 +6,23 @@ before do
   p params
 end
 
+get "/admin" do
+  @posts = Post.order("created_at DESC")
+  @categories = Category.order("created_at DESC")
+  @title = "Admin"
+  haml :"admin/index"
+end
+
 get "/admin/posts/new" do
   @title = "New Post"
   @post = Post.new
   haml :"admin/posts/new"
 end
 
-get "/admin/posts" do
-  @posts = Post.order("created_at DESC")
-  haml :"admin/posts/index"
-end
-
 post "/admin/posts" do
   @post = Post.new(params[:post])
   if @post.save
-    redirect "/admin/posts"
+    redirect "admin"
   else
     haml :"admin/posts/new"
   end
@@ -35,7 +37,7 @@ end
 put "/admin/posts/:id" do
   @post = Post.find(params[:id])
   if @post.update_attributes(params[:post])
-    redirect "/admin/posts"
+    redirect "admin"
   else
     haml :"admin/posts/edit"
   end
@@ -53,15 +55,11 @@ get "/admin/categories/new" do
   haml :"admin/categories/new"
 end
 
-get "/admin/categories" do
-  @category = Category.order("created_at DESC")
-  haml :"admin/categories/index"
-end
-
 post "/admin/categories" do
   @category = Category.new(params[:category])
+  @category.image = params[:category][:image]
   if @category.save
-    redirect "/admin/categories"
+    redirect "admin"
   else
     haml :"admin/categories/new"
   end
@@ -76,7 +74,7 @@ end
 put "/admin/categories/:id" do
   @category = Category.find(params[:id])
   if @category.update_attributes(params[:category])
-    redirect "admin/categories"
+    redirect "admin"
   else
     haml :"admin/categories/edit"
   end
@@ -84,7 +82,7 @@ end
  
 delete "/admin/categories/:id" do
   @category = Category.find(params[:id]).destroy
-  redirect "/"
+  redirect "admin"
 end
 
 

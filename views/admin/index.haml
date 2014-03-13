@@ -1,0 +1,30 @@
+.row.content
+  %section
+    %h1 
+      Posts
+
+    %ul
+      - @posts.each do |post|
+        %li
+          %a{ href: "/admin/posts/#{post.id}/edit" }
+            %img.sml-icon{ src: "#{post.category.image}"}
+            = post.title 
+            |
+            %span
+              = pretty_date(post.created_at)
+
+    %a.btn{ href: "/admin/posts/new" } 
+      New Post
+  %section
+    %h1 
+      Categories
+    
+    %ul
+      - @categories.each do |cat|
+        %li
+          %a{ href: "/admin/categories/#{cat.id}/edit" }
+            %img.sml-icon{ src: "#{cat.image}" }
+            = cat.title 
+
+    %a.btn{ href: "/admin/categories/new" } 
+      New Category

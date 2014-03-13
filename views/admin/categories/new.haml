@@ -4,6 +4,6 @@
   %h1
     New Category
 
-  %form{ action: "/admin/categories", method: "post" }
+  %form{ action: "/admin/categories", method: "post", enctype: "multipart/form-data"}
     = haml :"admin/categories/category_form"
-    %input{ type: "submit", value: "Create Category"}
+    %input.btn{ type: "submit", value: "Create Category"}

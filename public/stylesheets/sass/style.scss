@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
+ol, ul, li {
   list-style: none; }
 
 blockquote, q {
@@ -77,20 +77,25 @@ body {
 }
 
 h1 {
-
-  &.x-large {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: $primary;
+  margin-bottom: $margin;
+  
+  &.banner {
     font-size: 2.5em;
+    color: white;
+    font-weight: 300;
   }
 }
 
 h2 {
-  font-weight: 600;
-  font-size: 1.25em;
-  color: $primary;
+  @extend h1;
+  font-size: 1.2em;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: $margin;
 }
 
 /* buttons and links */
@@ -102,14 +107,42 @@ p {
   background: $primary;
   color: white;
   padding: 10px 20px;
+  display: inline-block;
+  margin: 10px 0; 
 
   &:hover {
     background: lighten($primary, 10%);
   }
+
+  &.btn-delete {
+    background: $red;
+  }
 }
 
 a {
+  color: $primary;
   text-decoration: none;
+}
+
+/* images */
+
+img {
+
+  &.sml-icon {
+    width: 30px;
+    @include round-corners;
+
+    ul & {
+      position: relative;
+      top: 8px;
+    }
+  }
+}
+
+/* lists */
+
+ul {
+  margin-bottom: $margin;
 }
 
 /* forms */
@@ -136,12 +169,16 @@ textarea {
   li {
     margin-right: 10px;
     font-size: .8em;
-    color: red;
+    color: $red;
     float: left;
   }
 }
 
 /* layout */
+
+section {
+  margin-bottom: 40px;
+}
 
 .clear:before,
 .clear:after {

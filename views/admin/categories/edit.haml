@@ -3,7 +3,9 @@
 
   %form{ action: "/admin/categories/#{@category.id}", method: "post", enctype: "multipart/form-data"}
     %input{ type: "hidden", name: "_method", value: "put"}
-
     = haml :"admin/categories/category_form"
-    
-    %input{type: "submit", value: "Edit Category"}
+    %input.btn{type: "submit", value: "Update Category"}
+
+  %form{ action: "/admin/categories/#{@category.id}", method: "post" }
+    %input{ type: "hidden", name: "_method", value: "delete" }
+    %input.btn.btn-delete{ type: "submit", value: "Delete Category"}

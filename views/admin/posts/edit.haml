@@ -1,27 +1,14 @@
 .row.content
-  %h2 Edit Post
+  = haml :"shared/errors", locals: {obj: @post}
+  
+  %h1 
+    Edit Post
 
   %form{ action: "/admin/posts/#{@post.id}", method: "post"}
     %input{ type: "hidden", name: "_method", value: "put"}
+    = haml :"/admin/posts/post_form"
+    %input.btn{type: "submit", value: "Update Post"}
 
-    %label{ for: "post_title"}
-      Title:
-    %input{ id: "post_title", name: "post[title]", type: "text", value: "#{@post.title}"}
-    %br 
-
-    %label{ for: "post_category"}
-      Category:
-    %select{ id: "post_category", name: "post[category_id]"}
-      - Category.all.each do |cat|
-        %option{ value: cat.id }
-          = cat.title
-    %br
-
-    %label{ for: "post_body"}
-      Body:
-    %br
-    %textarea#post_body{ name: "post[body]", rows: "200"}
-      = @post.body
-    %br
-   
-    %input{type: "submit", value: "Edit Post"}
+  %form{ action: "/admin/posts/#{@post.id}", method: "post" }
+    %input{ type: "hidden", name: "_method", value: "delete" }
+    %input.btn.btn-delete{ type: "submit", value: "Delete Post"}

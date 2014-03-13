@@ -1,4 +1,11 @@
-$primary: rgb(78, 177, 188);
+$primary:   rgb(78,177,188);  /* teal */
+$secondary: rgb(73,121,201);  /* dk blue */
+$color-3:   rgb(77,162,211);  /* med blue */
+$color-4:   rgb(77,211,187);  /* green-blue */
+$color-5:   rgb(73,201,142);  /* aqua-green */
+$red:       rgb(173, 0, 0);   /* dark red */
+
+$margin: 15px;
 
 @mixin round-corners {
   -webkit-border-radius: 5px;

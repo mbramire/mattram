@@ -1,0 +1,9 @@
+.row.content
+  = haml :"shared/errors", locals: {obj: @category}
+
+  %h1
+    New Category
+
+  %form{ action: "/admin/categories", method: "post" }
+    = haml :"admin/categories/category_form"
+    %input{ type: "submit", value: "Create Category"}

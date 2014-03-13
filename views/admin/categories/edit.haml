@@ -1,0 +1,9 @@
+.row.content
+  %h2 Edit Category
+
+  %form{ action: "/admin/categories/#{@category.id}", method: "post", enctype: "multipart/form-data"}
+    %input{ type: "hidden", name: "_method", value: "put"}
+
+    = haml :"admin/categories/category_form"
+    
+    %input{type: "submit", value: "Edit Category"}

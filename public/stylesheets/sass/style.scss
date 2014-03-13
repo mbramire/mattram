@@ -108,6 +108,10 @@ p {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 /* forms */
 
 input, textarea {
@@ -275,7 +279,7 @@ textarea {
   overflow: auto;
 
   .main-logo {
-    padding: 15px;
+    padding: 20px;
     float: left;
   }
 

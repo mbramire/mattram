@@ -1,0 +1,15 @@
+.row
+  %h1 
+    Categories
+  %ul
+  - unless @category.nil?
+    - @category.each do |cat|
+      %li
+        %h2
+          %a{ href: "/admin/categories/#{cat.id}/edit" }
+            = cat.title 
+            %img{ src: "#{cat.image}" }
+  %br
+  %a.btn{ href: "/admin/categories/new "}
+    New Category
+

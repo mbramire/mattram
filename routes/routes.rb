@@ -1,12 +1,41 @@
-# Admin routes
-# Post routes
-
+#Filters
 before do
   puts '[Params]'
   p params
 end
 
+before "/admin/*" do
+  unless admin_present?
+    redirect "/"
+  end
+end
+
+
+# Admin routes
 get "/admin" do
+  @title = "Admin Login"
+  haml :"admin/login"
+end
+
+post "/login" do
+  @admin = Admin.find_by(username: params[:username])
+  if @admin.authenticate(params[:password])
+    session[:user] = @admin
+    redirect "/admin/index"
+  else
+    @errors = "Invalid username or password"
+    haml :"admin/login"
+  end 
+end
+
+get "/logout" do
+  session[:user] = nil
+  redirect "/"
+end
+
+
+# Post routes
+get "/admin/index" do
   @posts = Post.order("created_at DESC")
   @categories = Category.order("created_at DESC")
   @title = "Admin"
@@ -22,7 +51,7 @@ end
 post "/admin/posts" do
   @post = Post.new(params[:post])
   if @post.save
-    redirect "admin"
+    redirect "admin/index"
   else
     haml :"admin/posts/new"
   end
@@ -37,7 +66,7 @@ end
 put "/admin/posts/:id" do
   @post = Post.find(params[:id])
   if @post.update_attributes(params[:post])
-    redirect "admin"
+    redirect "admin/index"
   else
     haml :"admin/posts/edit"
   end
@@ -45,8 +74,9 @@ end
  
 delete "/admin/posts/:id" do
   @post = Post.find(params[:id]).destroy
-  redirect "/"
+  redirect "admin/index"
 end
+
 
 # category routes
 get "/admin/categories/new" do
@@ -59,7 +89,7 @@ post "/admin/categories" do
   @category = Category.new(params[:category])
   @category.image = params[:category][:image]
   if @category.save
-    redirect "admin"
+    redirect "admin/index"
   else
     haml :"admin/categories/new"
   end
@@ -74,7 +104,7 @@ end
 put "/admin/categories/:id" do
   @category = Category.find(params[:id])
   if @category.update_attributes(params[:category])
-    redirect "admin"
+    redirect "admin/index"
   else
     haml :"admin/categories/edit"
   end
@@ -82,13 +112,11 @@ end
  
 delete "/admin/categories/:id" do
   @category = Category.find(params[:id]).destroy
-  redirect "admin"
+  redirect "admin/index"
 end
 
 
-
-
-# Get all of our routes
+# home, post, comment routes
 get "/" do
   @posts = Post.order("created_at DESC").limit(5)
   haml :"pages/welcome"
@@ -98,8 +126,7 @@ get "/posts" do
   @posts = Post.order("created_at DESC")
   haml :"posts/index"
 end 
- 
-# Get the individual page of the post with this ID.
+
 get "/posts/:id" do
   @post = Post.find(params[:id])
   @title = @post.title
@@ -107,7 +134,6 @@ get "/posts/:id" do
   haml :"posts/show"
 end
 
-#creates comments
 post "/post/:id/comments" do
   @comment = Comment.new(params[:comment])
   @post = Post.find(params[:id])

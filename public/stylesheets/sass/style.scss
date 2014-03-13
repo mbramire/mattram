@@ -228,6 +228,7 @@ section {
   float: left;
   width: 62.5%; 
 }
+
 /* surgical */
 .pull-left {
   float: left;
@@ -254,7 +255,6 @@ section {
 }
 
 /* post page */
-
 .title-container {
   height: 75px;
 
@@ -309,8 +309,7 @@ section {
     margin-top: 15px;
   }
 }
-/* header */
-
+/* headers */
 .header {
   color: white;
   overflow: auto;
@@ -323,15 +322,34 @@ section {
   li {
     float: right;
     padding: 25px 20px;
+    color: white;
 
     a {
       text-decoration: none;
-      color: white;
     }
 
     &:hover {
       background: $primary;
-      color: white;
+    }
+  }
+}
+
+.admin-header {
+  color: white;
+  overflow: auto;
+  background: $color-5;
+
+  li {
+    float: right;
+    padding: 8px 20px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: lighten($color-5, 10%);
     }
   }
 }

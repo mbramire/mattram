@@ -1,5 +1,5 @@
-require 'carrierwave'
-require 'carrierwave/orm/activerecord'
+require "carrierwave"
+require "carrierwave/orm/activerecord"
 
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
@@ -38,4 +38,10 @@ end
 class Category < ActiveRecord::Base
   has_many :posts
   mount_uploader :image, ImageUploader
+end
+
+class Admin < ActiveRecord::Base
+  validates :username, presence: true, uniqueness: true
+  validates :password, presence: true
+  has_secure_password
 end

@@ -6,6 +6,8 @@
     %link{ href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel: "stylesheet" }
     %link{ href: 'http://fonts.googleapis.com/css?family=Titillium+Web:200,300,600', rel: 'stylesheet', type: 'text/css' }
   %body
+    - if admin_present?
+      = haml :"admin/top_nav"
     = haml :"shared/top_nav"
     .main-container
       .trans-white-row-full.pad-all

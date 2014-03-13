@@ -25,4 +25,9 @@ helpers do
   def truncate(body)
     "#{body.slice!(0..20)}..."
   end
+
+  #session helpers
+  def admin_present?
+    session[:user].present?
+  end
 end

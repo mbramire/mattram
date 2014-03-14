@@ -1,14 +1,9 @@
-.black-row-full.margin-top-large
-  .row.title-container
-    .portrait
+.content-wrapper
+  .row 
     %h1.banner
       = @post.title
-.trans-black-row-full
-  .row.date-container.tiny-txt
     %p 
-      = pretty_date(@post.created_at)
-.trans-white-row-full
-  .row.content  
+      = pretty_date(@post.created_at)  
     %p
       = @post.body
     

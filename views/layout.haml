@@ -9,6 +9,4 @@
     - if admin_present?
       = haml :"admin/top_nav"
     = haml :"shared/top_nav"
-    .main-container
-      .trans-white-row-full.pad-all
-      = yield
+    = yield

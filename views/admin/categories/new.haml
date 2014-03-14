@@ -1,9 +1,10 @@
-.row.content
-  = haml :"shared/errors", locals: {obj: @category}
+.content-wrapper
+  .row 
+    = haml :"shared/errors", locals: {obj: @category}
 
-  %h1
-    New Category
+    %h1
+      New Category
 
-  %form{ action: "/admin/categories", method: "post", enctype: "multipart/form-data"}
-    = haml :"admin/categories/category_form"
-    %input.btn{ type: "submit", value: "Create Category"}
+    %form{ action: "/admin/categories", method: "post", enctype: "multipart/form-data"}
+      = haml :"admin/categories/category_form"
+      %input.btn{ type: "submit", value: "Create Category"}

@@ -1,22 +1,23 @@
-.row.content
-  - if @errors.present?
-    %ul.error-list
-      %li
-        %i.fa.fa-exclamation-triangle 
-        = @errors
-    %br
+.content-wrapper
+  .row
+    - if @errors.present?
+      %ul.error-list
+        %li
+          %i.fa.fa-exclamation-triangle 
+          = @errors
+      %br
 
-  %h1
-    Login
+    %h1
+      Login
 
-  %form{ action: "/login", method: "post" }
-    %div
-      %label{ for: "username" }
-        Username:
-      %input{ type: "text", name: "username" }
-    %div
-      %label{ for: "password" }
-        Password: 
-      %input{ type: "password", name: "password" }
-    %div
-      %input.btn{ type: "submit", value: "Login" }
+    %form{ action: "/login", method: "post" }
+      %div
+        %label{ for: "username" }
+          Username:
+        %input{ type: "text", name: "username" }
+      %div
+        %label{ for: "password" }
+          Password: 
+        %input{ type: "password", name: "password" }
+      %div
+        %input.btn{ type: "submit", value: "Login" }

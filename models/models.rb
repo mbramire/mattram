@@ -24,6 +24,7 @@ end
 class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
+  validates :category_id, presence: true
   belongs_to :category
   has_many :comments
 end
@@ -36,6 +37,7 @@ class Comment < ActiveRecord::Base
 end
 
 class Category < ActiveRecord::Base
+  validates :image, presence: true
   has_many :posts
   mount_uploader :image, ImageUploader
 end

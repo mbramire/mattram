@@ -1,5 +1,8 @@
 .row.content
-  %h2 Edit Category
+  = haml :"shared/errors", locals: {obj: @category}
+
+  %h2 
+    Edit Category
 
   %form{ action: "/admin/categories/#{@category.id}", method: "post", enctype: "multipart/form-data"}
     %input{ type: "hidden", name: "_method", value: "put"}

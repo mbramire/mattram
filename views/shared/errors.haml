@@ -1,6 +1,7 @@
-%ul.error-list
-  - obj.errors.full_messages.each do |m| 
-    %li
-      %i.fa.fa-exclamation-triangle 
-      = m
-%br
+- if obj.errors.present?
+  %ul.error-list
+    - obj.errors.full_messages.each do |m| 
+      %li
+        %i.fa.fa-exclamation-triangle 
+        = m
+  %br

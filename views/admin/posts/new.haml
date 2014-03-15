@@ -1,9 +1,10 @@
-.row.content
-  = haml :"shared/errors", locals: {obj: @post}
+.content-wrapper
+  .row 
+    = haml :"shared/errors", locals: {obj: @post}
 
-  %h1
-    New Post
+    %h1
+      New Post
 
-  %form{ action: "/admin/posts", method: "post" }
-    = haml :"/admin/posts/post_form"
-    %input.btn{ type: "submit", value: "Create Post" }
+    %form{ action: "/admin/posts", method: "post" }
+      = haml :"/admin/posts/post_form"
+      %input.btn{ type: "submit", value: "Create Post" }

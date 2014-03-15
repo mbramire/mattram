@@ -1,14 +1,15 @@
-.row.content
-  = haml :"shared/errors", locals: {obj: @post}
-  
-  %h1 
-    Edit Post
+.content-wrapper
+  .row 
+    = haml :"shared/errors", locals: {obj: @post}
+    
+    %h1 
+      Edit Post
 
-  %form{ action: "/admin/posts/#{@post.id}", method: "post"}
-    %input{ type: "hidden", name: "_method", value: "put"}
-    = haml :"/admin/posts/post_form"
-    %input.btn{type: "submit", value: "Update Post"}
+    %form{ action: "/admin/posts/#{@post.id}", method: "post"}
+      %input{ type: "hidden", name: "_method", value: "put"}
+      = haml :"/admin/posts/post_form"
+      %input.btn{type: "submit", value: "Update Post"}
 
-  %form{ action: "/admin/posts/#{@post.id}", method: "post" }
-    %input{ type: "hidden", name: "_method", value: "delete" }
-    %input.btn.btn-delete{ type: "submit", value: "Delete Post"}
+    %form{ action: "/admin/posts/#{@post.id}", method: "post" }
+      %input{ type: "hidden", name: "_method", value: "delete" }
+      %input.btn.btn-delete{ type: "submit", value: "Delete Post"}

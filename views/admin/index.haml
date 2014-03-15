@@ -1,7 +1,8 @@
-.row.content
-  %section
-    %h1 
-      Posts
+.content-wrapper
+  .row
+    %section
+      %h1 
+        Posts
 
     %ul
       - @posts.each do |post|
@@ -16,18 +17,18 @@
           %a{ href: "/posts/#{post.id}"}
             View
 
-    %a.btn{ href: "/admin/posts/new" } 
-      New Post
-  %section
-    %h1 
-      Categories
-    
-    %ul
-      - @categories.each do |cat|
-        %li
-          %a{ href: "/admin/categories/#{cat.id}/edit" }
-            %img.sml-icon{ src: "#{cat.image}" }
-            = cat.title 
+      %a.btn{ href: "/admin/posts/new" } 
+        New Post
+    %section
+      %h1 
+        Categories
+      
+      %ul
+        - @categories.each do |cat|
+          %li
+            %a{ href: "/admin/categories/#{cat.id}/edit" }
+              %img.sml-icon{ src: "#{cat.image}" }
+              = cat.title 
 
-    %a.btn{ href: "/admin/categories/new" } 
-      New Category
+      %a.btn{ href: "/admin/categories/new" } 
+        New Category

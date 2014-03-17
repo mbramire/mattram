@@ -2,7 +2,7 @@ helpers do
   # If @title is assigned, add it to the page's title.
   def title
     if @title
-      "#{@title} -- My Blog"
+      "#{@title} - WebDevStory - Matt Ramirez"
     else
       "My Blog"
     end

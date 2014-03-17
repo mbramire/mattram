@@ -8,7 +8,7 @@
     %a{ href: "/about" }
       %li 
         about me
-    %a{ href: "/posts" } 
+    %a{ href: "/archive" } 
       %li#add-drop 
         archive
     %a{ href: "/#contact" }
@@ -19,9 +19,18 @@
     - @categories.each do |c|
       %a{ href: "/archive/#{c.id}" }
         %li{ id: "list-item-#{c.id}" }
-          %img.med-icon{ src: (c.image) }
+          %img.med-icon{ src: (c.nav_icon) }
           %span.raise-txt
             = c.title
+      %style 
+        = "#list-item-#{c.id}:hover"
+        {
+        background: black;
+        }
+        = "#list-item-#{c.id}"
+        {
+        = "background: #{c.color};"
+        }
     
 - unless @homepage.present?
   .content-wrapper.image-bg.nav-chrome

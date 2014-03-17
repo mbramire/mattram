@@ -42,6 +42,7 @@ class Category < ActiveRecord::Base
   validates :color, presence: true
   has_many :posts
   mount_uploader :image, ImageUploader
+  mount_uploader :nav_icon, ImageUploader
 end
 
 class Admin < ActiveRecord::Base

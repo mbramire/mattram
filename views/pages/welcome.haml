@@ -8,6 +8,8 @@
       So heres the plan... I'd like to start sharing these little "tidbits", in the form of brief, easy-to-read, posts - short but sweet. Most of the stuff I'll be posting about will be related to ruby, html, css, mostly rails related components. I hope you enjoy the content, and by all means, please leave a comment if you like to spin up a discussion, dissect my post, or point out just how wrong I am (don't worry I've got pretty thick skin). Hope you enjoy the content!
     %p 
       Oh, and case you are wondering... yes, I did plan this sites color scheme around the shirt I was wearing that day.
-    %h2 Recent Posts
-    - @posts.each do |r|
-      = haml :"/posts/_post_preview", locals: {post: r}  
+    %section
+      %h2 
+        Recent Posts
+      - @posts.each do |r|
+        = haml :"/posts/_post_preview", locals: {post: r}  

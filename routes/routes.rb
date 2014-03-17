@@ -124,11 +124,6 @@ get "/" do
   haml :"pages/welcome"
 end
 
-get "/posts" do
-  @posts = Post.order("created_at DESC")
-  haml :"posts/index"
-end 
-
 get "/posts/:id" do
   @post = Post.find(params[:id])
   @title = @post.title
@@ -152,6 +147,11 @@ get "/archive/:id" do
   @title = @category.title
   haml :"archive/show"
 end
+
+get "/archive" do
+  @posts = Post.order("created_at DESC")
+  haml :"archive/index"
+end 
 
 # Our About Me page.
 get "/about" do

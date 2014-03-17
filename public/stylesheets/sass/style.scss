@@ -58,6 +58,9 @@ table {
 /* global */
 body {
   background: black;
+  background-image: url("/images/footer-guy.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
   color: white;
 }
 
@@ -90,11 +93,16 @@ h1 {
 h2 {
   @extend h1;
   font-size: 1.2em;
+  margin-bottom: 15px;
 
   .gray-box & {
     color: black;
     font-weight: 200;
     margin-bottom: 0;
+  }
+
+  .gray-bg & {
+    color: white;
   }
 }
 
@@ -116,10 +124,18 @@ p {
   color: white;
   padding: 10px 20px;
   display: inline-block;
-  margin: 10px 0; 
+  margin: 15px 0; 
 
   &:hover {
     background: lighten($primary, 10%);
+  }
+
+  &.btn-teal {
+    background: $color-4;
+
+    &:hover {
+      background: lighten($color-4, 10%);
+    }
   }
 
   &.btn-delete {
@@ -174,6 +190,10 @@ input, textarea {
   border: none;
   background: lighten(gray, 45%);
   padding: 10px;
+
+  .gray-bg & {
+    background: rgb(55,55,55);
+  }
 }
 
 textarea {
@@ -199,7 +219,7 @@ textarea {
 /* layout */
 
 section {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .gray-box {
@@ -244,6 +264,10 @@ section {
 
   &.black-bg {
     background: black;
+  }
+
+  &.gray-bg {
+    background: rgb(30,30,30);
   }
 
   &.image-bg {
@@ -354,6 +378,32 @@ section {
   }
 }
 
+/* footer */
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  color: rgb(131, 130, 130);
+  height: 365px;
+
+  a {
+    color: rgb(131, 130, 130);
+  }
+
+  ul {
+    display: inline-block;
+
+    p {
+      position: absolute;
+      margin-top: 15px;
+    }
+
+    li {
+      float: left;
+      margin-right: 25px;
+    }
+  }
+}
+
 .admin-header {
   color: white;
   overflow: auto;
@@ -399,51 +449,6 @@ section {
       }
     }
 
-    /* html */
-    &#list-item-8 {
-      background: $color-3;
-
-      &:hover {
-        background: lighten($color-3, 10%);
-      }
-    }
-
-    /* rails */
-    &#list-item-7 {
-      background: $secondary;
-
-      &:hover {
-        background: lighten($secondary, 10%);
-      }
-    }
-
-    /* css */
-    &#list-item-6 {
-      background: $primary;
-
-      &:hover {
-        background: lighten($primary, 10%);
-      }
-    }
-
-    /* sinatra */
-    &#list-item-5 {
-      background: $color-5;
-
-      &:hover {
-        background: lighten($color-5, 10%);
-      }
-    }
-
-    /* ruby */
-    &#list-item-4 {
-      background: $color-4;
-
-      &:hover {
-        background: lighten($color-4, 10%);
-      }
-    }
-
     .raise-txt {
       position: relative;
       bottom: 15px;
@@ -482,7 +487,6 @@ section {
 
 .comment-container {
   padding-bottom: 10px;
-  border-bottom: 1px solid $primary;
 
   .user-name {
     background: $primary;

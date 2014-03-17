@@ -1,0 +1,18 @@
+%h2.margin-top-large
+  %i.fa.fa-comment
+  comments
+  
+- post.comments.each do |c|
+  .comment-container
+    .user-name
+      %i.fa.fa-user.fa-inverse
+      %span.bold-txt
+        = c.name
+      said on 
+      = pretty_date(c.created_at)
+    %p
+      = c.body
+    - if admin_present?
+      %form{ action: "/comments/#{c.id}", method: "post" }
+        %input{ type: "hidden", name: "_method", value: "delete" }
+        %input.btn.btn-delete.pull-right{ type: "submit", value: "Delete Comment"}

@@ -5,24 +5,19 @@
       %h1.post-header{ style: "color : #{@post.category.color}"}
         = @post.title
     %p.margin-top 
-      = pretty_date(@post.created_at)  
+      = pretty_date(@post.created_at) 
+
+      .addthis_toolbox.addthis_default_style.addthis_32x32_style
+        %a.addthis_button_facebook.margin-right
+        %a.addthis_button_twitter.margin-right
+        %a.addthis_button_google_plusone_share.margin-right
+        %a.addthis_button_linkedin.margin-right
+      %script{ type: "text/javascript", src: "//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5327511b2261ddb1" }
+
     %p
       = @post.body
     
-    %h2.margin-top-large
-      %i.fa.fa-comment
-      comments
-
-    - @post.comments.each do |c|
-      .comment-container
-        .user-name
-          %i.fa.fa-user.fa-inverse
-          %span.bold-txt
-            = c.name
-          said on 
-          = pretty_date(c.created_at)
-        %p
-          = c.body
+    = haml :"/posts/_comments", locals: { post: @post }
 
     .clear
       %form{ action: "/post/#{@post.id}/comments", method: "post" }
@@ -32,11 +27,14 @@
 
         %label{ for: "comment_body" }
         %textarea#post_body.pull-right{ name: "comment[body]", rows: "5" }
-          = @comment.body
+          - if @comment.body.present?
+            = @comment.body
+          - else
+            leave a reply...
         %br
 
         %input.btn.pull-right{ type: "submit", value: "comment" }
 
-        %input.pull-right.margin-right.margin-top{ id: "comment_name", name: "comment[name]", type: "text", value: "#{@comment.name}"}
+        %input.pull-right.margin-right.margin-top{ id: "comment_name", name: "comment[name]", type: "text", value: "name"}
         %label.pull-right.margin-top{ for: "comment_name" }
           %i.fa.fa-user.user-icon

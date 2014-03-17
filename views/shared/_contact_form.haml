@@ -8,12 +8,13 @@
 
       %label{ for: "contact_body" }
       %textarea#post_body.pull-right{ name: "contact[body]", rows: "10" }
+        email message here...
         =# @contact.body
       %br
 
       %input.btn.btn-teal.pull-right{ type: "submit", value: "email" }
 
-      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[name]", type: "text", value: ""} 
+      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[name]", type: "text", value: "your email"} 
         /#@contact.name
       %label.pull-right.margin-top{ for: "contact_name" }
         %i.fa.fa-user.user-icon

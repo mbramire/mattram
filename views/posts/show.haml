@@ -1,8 +1,10 @@
 .content-wrapper
   .row 
-    %h1.banner
-      = @post.title
-    %p 
+    %img.lg-icon.pull-left{ src: (@post.category.image)}
+    .hdr-cont
+      %h1.post-header{ style: "color : #{@post.category.color}"}
+        = @post.title
+    %p.margin-top 
       = pretty_date(@post.created_at)  
     %p
       = @post.body
@@ -26,7 +28,7 @@
       %h3.margin-top
         leave a reply
       %form{ action: "/post/#{@post.id}/comments", method: "post" }
-        = haml :"shared/errors", locals: {obj: @comment}
+        = haml :"shared/_errors", locals: {obj: @comment}
 
         %input{ type: "hidden", name: "comment[post_id]", value: "#{@post.id}" }
 

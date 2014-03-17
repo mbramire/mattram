@@ -38,6 +38,8 @@ end
 
 class Category < ActiveRecord::Base
   validates :image, presence: true
+  validates :title, presence: true
+  validates :color, presence: true
   has_many :posts
   mount_uploader :image, ImageUploader
 end

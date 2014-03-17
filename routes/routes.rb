@@ -1,5 +1,6 @@
 #Filters
 before do
+  @categories = Category.all
   puts '[Params]'
   p params
 end
@@ -118,6 +119,7 @@ end
 
 # home, post, comment routes
 get "/" do
+  @homepage = true
   @posts = Post.order("created_at DESC").limit(5)
   haml :"pages/welcome"
 end
@@ -144,6 +146,13 @@ post "/post/:id/comments" do
   end
 end
  
+# Archive routes
+get "/archive/:id" do
+  @category = Category.find(params[:id])
+  @title = @category.title
+  haml :"archive/show"
+end
+
 # Our About Me page.
 get "/about" do
   @title = "About Me"

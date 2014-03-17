@@ -23,7 +23,7 @@ helpers do
   end
 
   def truncate(body)
-    "#{body.slice!(0..20)}..."
+    "#{body.slice!(0..200)}... read more"
   end
 
   #session helpers

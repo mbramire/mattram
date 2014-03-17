@@ -1,0 +1,20 @@
+%label{ for: "category_title"}
+  Title:
+%br
+
+%input{ id: "category_title", name: "category[title]", type: "text", value: "#{@category.title}"}
+%br
+
+%label{ for: "category_color"}
+  Color:
+%br
+
+%input{ id: "category_color", name: "category[color]", type: "text", value: "#{@category.color}"}
+%br
+
+%label{ for: "category_image"}
+  Image:
+%br
+
+%input{ id: "category_image", name: "category[image]", type: "file" }
+%br

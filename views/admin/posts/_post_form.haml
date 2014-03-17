@@ -1,0 +1,20 @@
+%label{ for: "post_title"}
+  Title:
+%input{ id: "post_title", name: "post[title]", type: "text", value: "#{@post.title}"}
+%br 
+
+%label{ for: "post_category"}
+  Category:
+%select{ id: "post_category", name: "post[category_id]" }
+  - Category.all.each do |cat|
+    %option{ value: cat.id, selected: (@post.category_id == cat.id) }
+      = cat.title
+%br
+
+%label{ for: "post_body"}
+  Body:
+%br
+
+%textarea#post_body{ name: "post[body]", rows: "50"}
+  = @post.body
+%br

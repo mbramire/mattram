@@ -1,13 +1,13 @@
 .content-wrapper
   .row 
-    = haml :"shared/errors", locals: {obj: @post}
+    = haml :"shared/_errors", locals: {obj: @post}
     
-    %h1 
+    %h2 
       Edit Post
 
     %form{ action: "/admin/posts/#{@post.id}", method: "post"}
       %input{ type: "hidden", name: "_method", value: "put"}
-      = haml :"/admin/posts/post_form"
+      = haml :"/admin/posts/_post_form"
       %input.btn{type: "submit", value: "Update Post"}
 
     %form{ action: "/admin/posts/#{@post.id}", method: "post" }

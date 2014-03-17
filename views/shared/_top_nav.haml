@@ -1,0 +1,41 @@
+%nav.header
+  %a{ href: "/" }
+    %img.main-logo{ src: "/images/main-logo.png"} 
+  %ul
+    %a{ href: "/" } 
+      %li
+        home
+    %a{ href: "/about" }
+      %li 
+        about me
+    %a{ href: "/posts" } 
+      %li#add-drop 
+        archive
+    %a{ href: "/#contact" }
+      %li
+        contact
+#drop-down
+  %ul
+    - @categories.each do |c|
+      %a{ href: "/archive/#{c.id}" }
+        %li{ id: "list-item-#{c.id}" }
+          %img.med-icon{ src: (c.image) }
+          %span.raise-txt
+            = c.title
+    
+- unless @homepage.present?
+  .content-wrapper.image-bg.nav-chrome
+:javascript
+  $(document).ready(function(){
+    $("#add-drop").hover(function(){
+      $('#drop-down').slideToggle();
+      } , function(){
+      $('#drop-down').delay(0100).slideToggle();
+    });
+
+    $("li[id^='list-item-']").hover(function(){
+      $('#drop-down').clearQueue();
+      } , function(){
+      $('#drop-down').delay(0100).slideToggle();
+    });
+  });

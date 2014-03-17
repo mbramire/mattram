@@ -69,7 +69,7 @@ body {
 }
 
 .tiny-txt {
-  font-size: .8em;
+  font-size: .6em;
 }
 
 .bold-txt {
@@ -77,15 +77,13 @@ body {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 600;
   color: $primary;
-  margin-bottom: $margin;
-  
-  &.banner {
-    font-size: 2.5em;
-    color: white;
-    font-weight: 200;
+  margin-bottom: $margin + 10;
+
+  &.post-header {
+    margin: 0 0 0 15px;
   }
 }
 
@@ -153,7 +151,12 @@ img {
   }
 
   &.med-icon {
-    width: 80px;
+    width: 47px;
+    @include round-corners;
+  }
+
+  &.lg-icon {
+    width: 87px;
     @include round-corners;
   }
 }
@@ -208,7 +211,19 @@ section {
 
   .preview-wrapper {
     padding-left: 100px;
+    line-height: 1.2em;
+
+    p {
+      font-size: .8em;
+    }
   }
+}
+
+.hdr-cont {
+  height: 87px;
+  margin-left: 90px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .clear:before,
@@ -244,9 +259,20 @@ section {
 }
 
 .row {
-  width: 980px;
+  width: 750px;
   margin: 0 auto;
-  padding: 25px;
+  padding:  40px 25px;
+  overflow: auto;
+}
+
+.span-1 {
+  float: left;
+  width: 12.5%;
+}
+
+.span-2 {
+  float: left;
+  width: 25%;
 }
 
 .span-3 {
@@ -254,9 +280,24 @@ section {
   width: 37.5%;
 }
 
+.span-4 {
+  float: left;
+  width: 50%;
+}
+
 .span-5 {
   float: left;
   width: 62.5%; 
+}
+
+.span-6 {
+  float: left;
+  width: 75%; 
+}
+
+.span-6 {
+  float: left;
+  width: 87.5%; 
 }
 
 /* surgical */
@@ -269,7 +310,11 @@ section {
 }
 
 .margin-top {
-  margin-top: 20px;
+  margin-top: 15px;
+}
+
+.margin-right {
+  margin-right: 15px;
 }
 
 .margin-top-large {
@@ -281,10 +326,133 @@ section {
 }
 
 .pad-right {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
-/* post page */
+/* headers */
+.header {
+  color: white;
+  overflow: auto;
+
+  .main-logo {
+    padding: 24px;
+    float: left;
+  }
+
+  li {
+    float: right;
+    padding: 25px 20px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: $primary;
+    }
+  }
+}
+
+.admin-header {
+  color: white;
+  overflow: auto;
+  background: $color-5;
+
+  li {
+    float: right;
+    padding: 8px 20px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: lighten($color-5, 10%);
+    }
+  }
+}
+
+#drop-down {
+  position: absolute;
+  right: 0;
+  display: none;
+
+  a {
+    color: white;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+  
+  li {
+    width: 284px;
+    padding: 10px;
+
+    &#list-item-8 {
+      background: $color-3;
+
+      &:hover {
+        background: lighten($color-3, 10%);
+      }
+    }
+
+    /* html */
+    &#list-item-8 {
+      background: $color-3;
+
+      &:hover {
+        background: lighten($color-3, 10%);
+      }
+    }
+
+    /* rails */
+    &#list-item-7 {
+      background: $secondary;
+
+      &:hover {
+        background: lighten($secondary, 10%);
+      }
+    }
+
+    /* css */
+    &#list-item-6 {
+      background: $primary;
+
+      &:hover {
+        background: lighten($primary, 10%);
+      }
+    }
+
+    /* sinatra */
+    &#list-item-5 {
+      background: $color-5;
+
+      &:hover {
+        background: lighten($color-5, 10%);
+      }
+    }
+
+    /* ruby */
+    &#list-item-4 {
+      background: $color-4;
+
+      &:hover {
+        background: lighten($color-4, 10%);
+      }
+    }
+
+    .raise-txt {
+      position: relative;
+      bottom: 15px;
+      padding-left: 7px;
+    }
+  }
+}
+
+/* page specific */
 .title-container {
   height: 75px;
 
@@ -332,48 +500,19 @@ section {
     margin-top: 15px;
   }
 }
-/* headers */
-.header {
+
+.banner {
+  text-align: center;
+  height: 350px;
+  font-size: 2.5em;
   color: white;
-  overflow: auto;
+  font-weight: 200;
 
-  .main-logo {
-    padding: 20px;
-    float: left;
-  }
-
-  li {
-    float: right;
-    padding: 25px 20px;
-    color: white;
-
-    a {
-      text-decoration: none;
-    }
-
-    &:hover {
-      background: $primary;
-    }
-  }
-}
-
-.admin-header {
-  color: white;
-  overflow: auto;
-  background: $color-5;
-
-  li {
-    float: right;
-    padding: 8px 20px;
-    color: white;
-
-    a {
-      text-decoration: none;
-    }
-
-    &:hover {
-      background: lighten($color-5, 10%);
-    }
+  .banner-txt-cont {
+    width: 555px;
+    line-height: 1em;
+    margin: 0 auto;
+    padding-top: 73px;
   }
 }
 

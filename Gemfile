@@ -9,8 +9,8 @@ gem "sass"
 gem "haml"
 gem "carrierwave"
 gem 'bcrypt-ruby'
- 
+gem "tux"
+
 group :development do
   gem "shotgun"
-  gem "tux"
 end

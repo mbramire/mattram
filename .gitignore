@@ -10,8 +10,6 @@
 /log/*.log
 /tmp
 
-/public/uploads
-
 # carrierwave uploads
 /public/uploads/*
 

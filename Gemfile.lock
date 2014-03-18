@@ -28,6 +28,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    dotenv (0.10.0)
     haml (4.0.5)
       tilt
     i18n (0.6.9)
@@ -76,6 +77,7 @@ DEPENDENCIES
   activerecord
   bcrypt-ruby
   carrierwave
+  dotenv
   haml
   pg
   sass

@@ -1,8 +1,10 @@
+require 'dotenv'
+Dotenv.load
+
 require "sinatra"
 require "sinatra/activerecord"
 require "bcrypt"
 
-#set :database, ENV['DATABASE_URL'] || 'postgres://localhost/bridge_development'
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/ddl3r9urh0p0sb')
 
 enable :sessions

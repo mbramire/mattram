@@ -13,4 +13,5 @@ gem "tux"
 
 group :development do
   gem "shotgun"
+  gem "dotenv"
 end

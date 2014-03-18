@@ -10,8 +10,8 @@ gem "haml"
 gem "carrierwave"
 gem 'bcrypt-ruby'
 gem "tux"
+gem "dotenv"
 
 group :development do
   gem "shotgun"
-  gem "dotenv"
 end

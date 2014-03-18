@@ -83,7 +83,7 @@ h1 {
   font-size: 2em;
   font-weight: 600;
   color: $primary;
-  margin-bottom: $margin + 10;
+  margin-bottom: $margin;
 
   &.post-header {
     margin: 0 0 0 15px;
@@ -245,6 +245,7 @@ section {
   margin-left: 90px;
   display: table-cell;
   vertical-align: middle;
+  line-height: 1.8em;
 }
 
 .clear:before,

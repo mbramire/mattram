@@ -570,5 +570,12 @@ section {
 
 /* gist */
 .file-data {
-  background: black;
+  
+  table {
+    background: black;
+  }
+
+  .n {
+    color: white;
+  }
 }

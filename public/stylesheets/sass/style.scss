@@ -479,12 +479,21 @@ section {
 }
 
 .portrait {
-  overflow: hidden;
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  background: url("/images/portrait.jpg");
-  background-size: 100px
+  text-align: center;
+  width: 115px;
+  line-height: 1em;
+  margin-right: 15px;
+  float: left;
+
+  img {
+    padding-bottom: 5px;
+    display: block;
+    height: 115px;
+    width: 115px;
+    -webkit-border-radius: 57.5px;
+    -moz-border-radius: 57.5px;
+    border-radius: 57.5px;
+  }
 }
 
 .comment-container {

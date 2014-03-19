@@ -580,12 +580,12 @@ section {
 .gist-syntax {
   
   span {
-      &.n, &.k, &.o, &.p {
+    &.n, &.k, &.o, &.p {
       color: white;
     }
-  }  
 
-  .kp {
-    color: rgb(153, 0, 115);
-  }
+    &.kp {
+      color: rgb(153, 0, 115);
+    }
+  }  
 }

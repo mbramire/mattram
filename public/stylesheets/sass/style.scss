@@ -575,14 +575,15 @@ section {
   table {
     background: black;
   }
+}
 
-  .gist-syntax {
-    .n, .k, .o, .p {
-      color: white;
-    }
+.gist-syntax {
+    
+  .n, .k, .o, .p {
+    color: white;
+  }
 
-    .kp {
-      color: rgb(153, 0, 115);
-    }
+  .kp {
+    color: rgb(153, 0, 115);
   }
 }

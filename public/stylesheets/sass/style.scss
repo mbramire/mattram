@@ -190,6 +190,7 @@ input, textarea {
   border: none;
   background: lighten(gray, 45%);
   padding: 10px;
+  font-family: 'Titillium Web', sans-serif;
 
   .gray-bg & {
     background: rgb(55,55,55);
@@ -361,8 +362,14 @@ section {
   overflow: auto;
 
   .main-logo {
+    width: 325px;
+    height: 69px;
     padding: 24px;
     float: left;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/images/main-logo.png"); // falback for < IE 9
+    background-image: url("/images/main-logo.svg");
   }
 
   li {
@@ -376,6 +383,31 @@ section {
 
     &:hover {
       background: $primary;
+    }
+  }
+}
+
+#drop-down {
+  position: absolute;
+  right: 0;
+  display: none;
+
+  a {
+    color: white;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+  
+  li {
+    width: 284px;
+    padding: 10px;
+
+    .raise-txt {
+      position: relative;
+      bottom: 15px;
+      padding-left: 7px;
     }
   }
 }
@@ -404,6 +436,28 @@ section {
       margin-right: 25px;
     }
   }
+
+  .social-icon {
+    width: 47px;
+    height: 47px;
+    background-repeat: no-repeat;
+
+    &.github {
+      @include social-hover("github");
+    }
+
+    &.twitter {
+      @include social-hover("twitter"); 
+    }
+
+    &.stack {
+      @include social-hover("stack");  
+    }
+
+    &.linked {
+      @include social-hover("linked");  
+    }
+  }
 }
 
 .admin-header {
@@ -426,38 +480,6 @@ section {
   }
 }
 
-#drop-down {
-  position: absolute;
-  right: 0;
-  display: none;
-
-  a {
-    color: white;
-  }
-
-  ul {
-    margin-bottom: 0;
-  }
-  
-  li {
-    width: 284px;
-    padding: 10px;
-
-    &#list-item-8 {
-      background: $color-3;
-
-      &:hover {
-        background: lighten($color-3, 10%);
-      }
-    }
-
-    .raise-txt {
-      position: relative;
-      bottom: 15px;
-      padding-left: 7px;
-    }
-  }
-}
 
 /* page specific */
 .title-container {
@@ -483,7 +505,7 @@ section {
   width: 115px;
   line-height: 1em;
   margin-right: 15px;
-  float: left;
+  float: right;
 
   img {
     padding-bottom: 5px;
@@ -522,6 +544,16 @@ section {
   font-size: 2.5em;
   color: white;
   font-weight: 200;
+
+  .banner-icons {
+    margin: 0 auto 10px;
+    width: 275px;
+    height: 91px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/images/banner-icons.png"); // falback for < IE 9
+    background-image: url("/images/banner-icons.svg");
+  }
 
   .banner-txt-cont {
     width: 555px;

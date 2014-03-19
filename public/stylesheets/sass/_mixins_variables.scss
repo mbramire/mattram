@@ -17,3 +17,12 @@ $margin: 25px;
   cursor: pointer;
   cursor: hand;
 }
+
+@mixin social-hover($file) {
+  background-image: url("/images/social-icon-" + $file + ".png"); // falback for < IE 9
+  background-image: url("/images/social-icon-" + $file + ".svg");
+
+  &:hover {
+    background-position: 0 -48px;
+  }
+}

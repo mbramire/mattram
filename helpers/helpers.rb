@@ -4,7 +4,7 @@ helpers do
     if @title
       "#{@title} - WebDevStory - Matt Ramirez"
     else
-      "My Blog"
+      "WebDevStory - Matt Ramirez"
     end
   end
  

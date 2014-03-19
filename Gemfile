@@ -11,6 +11,7 @@ gem "carrierwave"
 gem 'bcrypt-ruby'
 gem "tux"
 gem "dotenv"
+gem "fog", "~> 1.3.1"
 
 group :development do
   gem "shotgun"

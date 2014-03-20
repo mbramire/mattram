@@ -6,18 +6,24 @@
       email me!
     %p Looking for a developer? Have a question? Lonely? Shoot me an email below!
     %form{ action: "/contact", method: "post" }
-      =# haml :"shared/_errors", locals: {obj: @contact}
+      - if @contact.present?
+        = haml :"shared/_errors", locals: {obj: @contact}
 
       %label{ for: "contact_body" }
       %textarea#post_body.pull-right{ name: "contact[body]", rows: "10" }
-        email message here...
-        =# @contact.body
+        - if @contact.present?
+          = @contact.body
       %br
 
       %input.btn.btn-teal.pull-right{ type: "submit", value: "email" }
 
-      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[name]", type: "text", value: "your email"} 
-        /#@contact.name
+      %input.pull-right.margin-right.margin-top{ id: "contact_email", name: "contact[your_email]", type: "text", value: (@contact.your_email if @contact.present?)} 
+      
+      %label.pull-right.margin-top{ for: "contact_email" }
+        %i.fa.fa-envelope.user-icon
+
+      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[your_name]", type: "text", value: (@contact.your_name if @contact.present?) } 
+      
       %label.pull-right.margin-top{ for: "contact_name" }
         %i.fa.fa-user.user-icon
           

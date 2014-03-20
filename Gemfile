@@ -9,9 +9,10 @@ gem "sass"
 gem "haml"
 gem "carrierwave"
 gem 'bcrypt-ruby'
-gem "tux"
+# gem "tux" #this breaks actionmailer for some reason
 gem "dotenv"
 gem "fog", "~> 1.3.1"
+gem "actionmailer"
 
 group :development do
   gem "shotgun"

@@ -164,19 +164,10 @@ post "/contact" do
   @contact = Contact.new(params[:contact])
   if @contact.valid?
     Pony.mail({
-      :to => 'mbramire@live.com',
-      :subject => 'webdevstory email',
-      :body => @contact.body,
-      :via => :smtp,
-      :via_options => {
-        :address => 'smtp.sendgrid.net',
-        :port => '587',
-        :domain => 'heroku.com',
-        :user_name => ENV['SENDGRID_USERNAME'],
-        :password => ENV['SENDGRID_PASSWORD'],
-        :authentication => :plain,
-        :enable_starttls_auto => true
-      }
+      to: 'mbramire@live.com',
+      from: @contact.your_email,
+      subject: 'webdevstory email from #{@contact.your_name}',
+      body: @contact.body
     })
     @hide_contact = true
     haml :"contact/thanks"

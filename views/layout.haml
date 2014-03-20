@@ -15,5 +15,6 @@
     - if @homepage.present?
       = haml :"_banner"
     = yield
-    = haml :"shared/_contact_form"
+    - unless @hide_contact
+      = haml :"shared/_contact_form"
     = haml :"shared/_footer"

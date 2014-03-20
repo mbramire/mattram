@@ -1,11 +1,12 @@
 require 'dotenv'
 Dotenv.load
 
-require "sinatra"
-require "sinatra/activerecord"
-require "bcrypt"
-require "carrierwave"
-require "carrierwave/orm/activerecord"
+require 'sinatra'
+require 'sinatra/activerecord'
+require 'bcrypt'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+require 'pony'
 
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/ddl3r9urh0p0sb')
 

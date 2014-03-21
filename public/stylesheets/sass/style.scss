@@ -79,6 +79,10 @@ body {
   font-weight: 600;
 }
 
+.primary {
+  color: $primary;
+}
+
 h1 {
   font-size: 2em;
   font-weight: 600;
@@ -512,19 +516,18 @@ section {
 
 .portrait {
   text-align: center;
-  width: 115px;
+  width: 162px;
   line-height: 1em;
-  margin-right: 15px;
+  margin-left: 10px;
   float: right;
 
   img {
-    padding-bottom: 5px;
-    display: block;
-    height: 115px;
-    width: 115px;
-    -webkit-border-radius: 57.5px;
-    -moz-border-radius: 57.5px;
-    border-radius: 57.5px;
+    padding-bottom: 10px;
+    height: 140px;
+    width: 140px;
+    -webkit-border-radius: 70px;
+    -moz-border-radius: 70px;
+    border-radius: 70px;
   }
 }
 

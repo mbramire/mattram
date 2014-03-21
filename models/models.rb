@@ -33,7 +33,7 @@ class Contact
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  validates :your_email, presence: true
+  validates :your_email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
   validates :body, presence: true
   validates :your_name, presence: true
 

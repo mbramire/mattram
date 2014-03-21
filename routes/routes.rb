@@ -166,7 +166,7 @@ post "/contact" do
     Pony.mail({
       to: 'mbramire@live.com',
       from: @contact.your_email,
-      subject: 'webdevstory email from #{@contact.your_name}',
+      subject: @contact.your_name,
       body: @contact.body
     })
     @hide_contact = true

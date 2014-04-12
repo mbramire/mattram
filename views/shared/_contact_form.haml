@@ -4,7 +4,7 @@
     %h2
       %i.fa.fa-envelope.user-icon
       email me!
-    %p Looking for a developer? Have a question? Lonely? Shoot me an email below!
+    %p Looking for a developer? Have a question? Shoot me an email below!
     %form{ action: "/contact", method: "post" }
       - if @contact.present?
         = haml :"shared/_errors", locals: {obj: @contact}

@@ -8,7 +8,7 @@ require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 require 'pony'
 
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/ddl3r9urh0p0sb')
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/webdevstory_development')
 
 enable :sessions
 

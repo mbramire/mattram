@@ -63,6 +63,8 @@ GEM
     rack-protection (1.5.2)
       rack
     rake (0.9.6)
+    recaptcha (4.1.0)
+      json
     ruby-hmac (0.4.0)
     sass (3.2.14)
     shotgun (0.9)
@@ -94,6 +96,7 @@ DEPENDENCIES
   pg
   pony
   rake
+  recaptcha
   sass
   shotgun
   sinatra

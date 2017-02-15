@@ -1,3 +1,6 @@
+include Recaptcha::Verify
+include Recaptcha::ClientHelper
+
 #Filters
 before do
   @categories = Category.all
@@ -26,7 +29,7 @@ post "/login" do
   else
     @errors = "Invalid username or password"
     haml :"admin/login"
-  end 
+  end
 end
 
 get "/logout" do
@@ -72,7 +75,7 @@ put "/admin/posts/:id" do
     haml :"admin/posts/edit"
   end
 end
- 
+
 delete "/admin/posts/:id" do
   @post = Post.find(params[:id]).destroy
   redirect "admin/index"
@@ -110,7 +113,7 @@ put "/admin/categories/:id" do
     haml :"admin/categories/edit"
   end
 end
- 
+
 delete "/admin/categories/:id" do
   @category = Category.find(params[:id]).destroy
   redirect "admin/index"
@@ -140,7 +143,7 @@ post "/post/:id/comments" do
     haml :"posts/show"
   end
 end
- 
+
 # Archive routes
 get "/archive/:id" do
   @category = Category.find(params[:id])
@@ -151,7 +154,7 @@ end
 get "/archive" do
   @posts = Post.order("created_at DESC")
   haml :"archive/index"
-end 
+end
 
 # Our About Me page.
 get "/about" do
@@ -162,7 +165,7 @@ end
 #contact Form
 post "/contact" do
   @contact = Contact.new(params[:contact])
-  if @contact.valid?
+  if @contact.valid? && verify_recaptcha
     Pony.mail({
       to: 'mbramire@live.com',
       from: @contact.your_email,

@@ -1,11 +1,11 @@
 .content-wrapper
-  .row 
+  .row
     %img.lg-icon.pull-left{ src: (@post.category.image)}
     .hdr-cont
       %h1.post-header{ style: "color : #{@post.category.color}"}
         = @post.title
-    %p.margin-top 
-      = pretty_date(@post.created_at) 
+    %p.margin-top
+      = pretty_date(@post.created_at)
 
       .addthis_toolbox.addthis_default_style.addthis_32x32_style
         %a.addthis_button_facebook
@@ -16,25 +16,25 @@
 
     %p
       = @post.body
-    
-    = haml :"/posts/_comments", locals: { post: @post }
 
-    .clear
-      %form{ action: "/post/#{@post.id}/comments", method: "post" }
-        = haml :"shared/_errors", locals: {obj: @comment}
+    /= haml :"/posts/_comments", locals: { post: @post }
 
-        %input{ type: "hidden", name: "comment[post_id]", value: "#{@post.id}" }
+    / .clear
+    /   %form{ action: "/post/#{@post.id}/comments", method: "post" }
+    /     = haml :"shared/_errors", locals: {obj: @comment}
 
-        %label{ for: "comment_body" }
-        %textarea#post_body.pull-right{ name: "comment[body]", rows: "5" }
-          - if @comment.body.present?
-            = @comment.body
-          - else
-            leave a reply...
-        %br
+    /     %input{ type: "hidden", name: "comment[post_id]", value: "#{@post.id}" }
 
-        %input.btn.pull-right{ type: "submit", value: "comment" }
+    /     %label{ for: "comment_body" }
+    /     %textarea#post_body.pull-right{ name: "comment[body]", rows: "5" }
+    /       - if @comment.body.present?
+    /         = @comment.body
+    /       - else
+    /         leave a reply...
+    /     %br
 
-        %input.pull-right.margin-right.margin-top{ id: "comment_name", name: "comment[name]", type: "text", value: "name"}
-        %label.pull-right.margin-top{ for: "comment_name" }
-          %i.fa.fa-user.user-icon
+    /     %input.btn.pull-right{ type: "submit", value: "comment" }
+
+    /     %input.pull-right.margin-right.margin-top{ id: "comment_name", name: "comment[name]", type: "text", value: "name"}
+    /     %label.pull-right.margin-top{ for: "comment_name" }
+    /       %i.fa.fa-user.user-icon

@@ -1,5 +1,5 @@
 @import "mixins_variables";
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
    html 5 reset
@@ -50,8 +50,8 @@ table {
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
  }
 
@@ -128,7 +128,7 @@ p {
   color: white;
   padding: 10px 20px;
   display: inline-block;
-  margin: 15px 0; 
+  margin: 15px 0;
 
   &:hover {
     background: lighten($primary, 10%);
@@ -323,17 +323,17 @@ section {
 
 .span-5 {
   float: left;
-  width: 62.5%; 
+  width: 62.5%;
 }
 
 .span-6 {
   float: left;
-  width: 75%; 
+  width: 75%;
 }
 
 .span-6 {
   float: left;
-  width: 87.5%; 
+  width: 87.5%;
 }
 
 /* surgical */
@@ -413,7 +413,7 @@ section {
     width: 47px;
     height: 47px;
   }
-  
+
   li {
     width: 284px;
     padding: 10px;
@@ -461,15 +461,15 @@ section {
     }
 
     &.twitter {
-      @include social-hover("twitter"); 
+      @include social-hover("twitter");
     }
 
     &.stack {
-      @include social-hover("stack");  
+      @include social-hover("stack");
     }
 
     &.linked {
-      @include social-hover("linked");  
+      @include social-hover("linked");
     }
   }
 }

@@ -10,20 +10,24 @@
         = haml :"shared/_errors", locals: {obj: @contact}
 
       %label{ for: "contact_body" }
-      %textarea#post_body.pull-right{ name: "contact[body]", rows: "10", tabindex: "1" }
+      %textarea#post_body{ name: "contact[body]", rows: "10", tabindex: "1" }
         - if @contact.present?
           = @contact.body
       %br
 
       %input.btn.btn-teal.pull-right{ type: "submit", value: "email", tabindex: "4" }
 
-      %input.pull-right.margin-right.margin-top{ id: "contact_email", name: "contact[your_email]", type: "text", value: (@contact.your_email if @contact.present?), tabindex: "3"} 
-      
+      %input.pull-right.margin-right.margin-top{ id: "contact_email", name: "contact[your_email]", type: "text", value: (@contact.your_email if @contact.present?), tabindex: "3"}
+
       %label.pull-right.margin-top{ for: "contact_email" }
         %i.fa.fa-envelope.user-icon
 
-      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[your_name]", type: "text", value: (@contact.your_name if @contact.present?), tabindex: "2" } 
-      
+      %input.pull-right.margin-right.margin-top{ id: "contact_name", name: "contact[your_name]", type: "text", value: (@contact.your_name if @contact.present?), tabindex: "2" }
+
       %label.pull-right.margin-top{ for: "contact_name" }
         %i.fa.fa-user.user-icon
-          
+
+      .clear
+
+      %div.pull-right.g-recaptcha{ data: { sitekey: "6LctfBUUAAAAAPFVl53qBrHrX2SxjU6ORow-OYvr" }}
+

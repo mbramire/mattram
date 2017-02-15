@@ -12,6 +12,13 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://local
 
 enable :sessions
 
+require 'recaptcha'
+# these will only work on localhost ... make your own at https://www.google.com/recaptcha
+Recaptcha.configure do |config|
+  config.site_key  = ENV['RECAPTCHA_SITE_KEY']
+  config.secret_key = ENV['RECAPTCHA_SECRET_KEY']
+end
+
 require_relative 'config/initializers/pony'
 require_relative 'config/initializers/carrierwave'
 require_relative 'uploaders/image_uploader'

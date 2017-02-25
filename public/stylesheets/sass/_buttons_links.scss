@@ -1,0 +1,35 @@
+.btn {
+  @include round-corners;
+  @include cursor;
+  border: none;
+  background: $primary;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 15px 0;
+
+  &:hover {
+    background: lighten($primary, 10%);
+  }
+
+  &.btn-teal {
+    background: $color-4;
+
+    &:hover {
+      background: lighten($color-4, 10%);
+    }
+  }
+
+  &.btn-delete {
+    background: $red;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  & .gray-box {
+    color: black;
+  }
+}

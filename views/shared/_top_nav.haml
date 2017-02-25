@@ -2,18 +2,22 @@
   %a{ href: "/" }
     .main-logo
   %ul
-    %a{ href: "/" } 
+    %a{ href: "/" }
       %li
         home
     %a{ href: "/about" }
-      %li 
+      %li
         about me
-    %a{ href: "/archive" } 
-      %li#add-drop 
-        archive
+    %a{ href: "/archive" }
+      %li#add-drop
+        posts
     %a{ href: "/#contact" }
       %li
         contact
+    %a{ href: "/portfolio" }
+      %li
+        portfolio
+
 #drop-down
   %ul
     - @categories.each do |c|
@@ -22,7 +26,7 @@
           %img.med-icon{ src: (c.nav_icon) }
           %span.raise-txt
             = c.title
-      %style 
+      %style
         = "#list-item-#{c.id}:hover"
         {
         background: black;
@@ -31,7 +35,7 @@
         {
         = "background: #{c.color};"
         }
-    
+
 - unless @homepage.present?
   .content-wrapper.image-bg.nav-chrome
 :javascript

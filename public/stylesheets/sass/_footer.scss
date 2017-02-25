@@ -1,0 +1,46 @@
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  color: rgb(131, 130, 130);
+  height: 365px;
+
+  a {
+    color: rgb(131, 130, 130);
+  }
+
+  ul {
+    display: inline-block;
+
+    p {
+      position: absolute;
+      margin-top: 15px;
+    }
+
+    li {
+      float: left;
+      margin-right: 25px;
+    }
+  }
+
+  .social-icon {
+    width: 47px;
+    height: 47px;
+    background-repeat: no-repeat;
+
+    &.github {
+      @include social-hover("github");
+    }
+
+    &.twitter {
+      @include social-hover("twitter");
+    }
+
+    &.stack {
+      @include social-hover("stack");
+    }
+
+    &.linked {
+      @include social-hover("linked");
+    }
+  }
+}

@@ -144,6 +144,18 @@ post "/post/:id/comments" do
   end
 end
 
+# Portfolio routes
+get '/portfolio' do
+  @title = "Edit Form"
+  haml :"portfolio/index"
+end
+
+get '/portfolio/:app' do
+  @title = "Edit Form"
+  @application = params[:app]
+  haml :"portfolio/show"
+end
+
 # Archive routes
 get "/archive/:id" do
   @category = Category.find(params[:id])

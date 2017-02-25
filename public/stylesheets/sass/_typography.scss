@@ -1,0 +1,53 @@
+/* typography */
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.tiny-txt {
+  font-size: .6em;
+}
+
+.bold-txt {
+  font-weight: 600;
+}
+
+.primary {
+  color: $primary;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  color: $primary;
+  margin-bottom: $margin;
+
+  &.post-header {
+    margin: 0 0 0 15px;
+  }
+}
+
+h2 {
+  @extend h1;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+
+  .gray-box & {
+    color: black;
+    font-weight: 200;
+    margin-bottom: 0;
+  }
+
+  .gray-bg & {
+    color: white;
+  }
+}
+
+p {
+  margin-bottom: $margin;
+
+  .gray-box & {
+    margin-bottom: 0;
+  }
+}

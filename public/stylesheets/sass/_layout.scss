@@ -1,0 +1,106 @@
+section {
+  margin-top: 40px;
+}
+
+.gray-box {
+  @include round-corners;
+  background: lighten(gray, 45%);
+  padding: 15px;
+  margin-bottom: $margin;
+  overflow: auto;
+
+  .preview-wrapper {
+    padding-left: 100px;
+    line-height: 1.2em;
+
+    a {
+      color: black;
+    }
+
+    p {
+      font-size: .8em;
+    }
+  }
+}
+
+.hdr-cont {
+  height: 87px;
+  margin-left: 90px;
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 1.8em;
+}
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.content-wrapper {
+  width: 100%;
+  background: white;
+  color: black;
+  line-height: 1.5em;
+
+  &.black-bg {
+    background: black;
+  }
+
+  &.gray-bg {
+    background: rgb(30,30,30);
+    color: white;
+  }
+
+  &.image-bg {
+    background-image: url("/images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &.nav-chrome {
+    height: 20px;
+  }
+}
+
+.row {
+  width: 750px;
+  margin: 0 auto;
+  padding:  40px 25px;
+  overflow: auto;
+}
+
+.span-1 {
+  float: left;
+  width: 8.3333333%;
+}
+
+.span-2 {
+  float: left;
+  width: 16.666666%;
+}
+
+.span-3 {
+  float: left;
+  width: 25%;
+}
+
+.span-4 {
+  float: left;
+  width: 33.333333%;
+}
+
+.span-5 {
+  float: left;
+  width: 41.666666%;
+}
+
+.span-6 {
+  float: left;
+  width: 50%;
+}

@@ -1,0 +1,79 @@
+.header {
+  color: white;
+  overflow: auto;
+
+  .main-logo {
+    width: 325px;
+    height: 68px;
+    padding: 24px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/images/main-logo.png"); // falback for < IE 9
+    background-image: url("/images/main-logo.svg");
+  }
+
+  li {
+    float: right;
+    padding: 25px 20px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: $primary;
+    }
+  }
+}
+
+#drop-down {
+  position: absolute;
+  right: 0;
+  display: none;
+
+  a {
+    color: white;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 47px;
+    height: 47px;
+  }
+
+  li {
+    width: 284px;
+    padding: 10px;
+
+    .raise-txt {
+      position: relative;
+      bottom: 15px;
+      padding-left: 7px;
+    }
+  }
+}
+
+.admin-header {
+  color: white;
+  overflow: auto;
+  background: $color-5;
+
+  li {
+    float: right;
+    padding: 8px 20px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: lighten($color-5, 10%);
+    }
+  }
+}

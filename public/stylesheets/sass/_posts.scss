@@ -1,0 +1,54 @@
+.title-container {
+  height: 75px;
+
+  h1 {
+   line-height: 1.5em;
+   margin-left: 115px;
+  }
+}
+
+.date-container {
+  height: 25px;
+
+  p {
+    padding-left: 115px;
+    line-height: 1.5em;
+  }
+}
+
+.portrait {
+  text-align: center;
+  width: 162px;
+  line-height: 1em;
+  margin-left: 10px;
+  float: right;
+
+  img {
+    padding-bottom: 10px;
+    height: 140px;
+    width: 140px;
+    -webkit-border-radius: 70px;
+    -moz-border-radius: 70px;
+    border-radius: 70px;
+  }
+}
+
+.comment-container {
+  padding-bottom: 10px;
+
+  .user-name {
+    background: $primary;
+    color: white;
+    padding-left: 5px;
+  }
+
+  p {
+    font-size: .75em;
+    margin-top: 5px;
+  }
+
+  &:first-of-type {
+    border-top: 1px solid $primary;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,22 @@
+  img {
+
+  &.sml-icon {
+    width: 30px;
+    @include round-corners;
+
+    ul & {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  &.med-icon {
+    width: 47px;
+    @include round-corners;
+  }
+
+  &.lg-icon {
+    width: 87px;
+    @include round-corners;
+  }
+}

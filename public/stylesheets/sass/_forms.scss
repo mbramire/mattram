@@ -1,0 +1,32 @@
+input, textarea {
+  @include round-corners;
+  border: none;
+  background: lighten(gray, 45%);
+  padding: 10px;
+  font-family: 'Titillium Web', sans-serif;
+
+  .gray-bg & {
+    background: rgb(55,55,55);
+    color: white;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+.user-icon {
+  color: gray;
+  margin-right: 5px;
+  padding-top: 9px;
+}
+
+.error-list {
+  li {
+    margin-right: 10px;
+    font-size: .8em;
+    color: $red;
+    float: left;
+  }
+}

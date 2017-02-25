@@ -1,18 +1,16 @@
 .content-wrapper
   .row
     %h1
-      Welcome to my blog!
-    .portrait
-      %img{ src: "images/portrait.jpg" }
-      %span.bold-txt.primary
-        Matt Ramirez
-      %br
-      %span.tiny-txt
-        Web Developer
+      Welcome!
     %p
-      Web development to me is about problem solving. Almost every day, we as web developers overcome various challenges - code logic, site layout, and user interaction to name a few. Like many professions, the life of a developer is about constantly learning. Our tools include a wealth of resources, that reflect the strength of our community. I've made it my goal to help shape these tools, and provide insight into the daily life of a web developer. Enjoy the content!
+      Wire framing, schema design, product management, API integrations; From the front end to the back. Specializing in Ruby on Rails application development, I have the skills needed to bring concepts into reality. I pride myself on being capapble of handling nearly all aspects of development. I have been involved in multiple projects playing the role of web designer, engineer, and dev-ops. Currently stationed in Rhode Island, I am always looking for new oppourtunities to build interesting applications and learn new technologies.
     %section
-      %h2 
-        Recent Posts
+      %h2 Some of My Work
+      = haml :"shared/_portfolio_nav"
+
+    /%p
+    / Web development to me is about problem solving. Almost every day, we as web developers overcome various challenges - code logic, site layout, and user interaction to name a few. Like many professions, the life of a developer is about constantly learning. Our tools include a wealth of resources, that reflect the strength of our community. I've made it my goal to help shape these tools, and provide insight into the daily life of a web developer. Enjoy the content!
+    %section
+      %h2 Recent Posts
       - @posts.each do |r|
-        = haml :"/posts/_post_preview", locals: {post: r}  
+        = haml :"/posts/_post_preview", locals: {post: r}

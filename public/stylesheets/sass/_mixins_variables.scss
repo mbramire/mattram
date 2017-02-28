@@ -6,6 +6,7 @@ $color-5:   rgb(73,201,142);  /* aqua-green */
 $red:       rgb(173, 0, 0);   /* dark red */
 
 $margin: 25px;
+$link-color: $primary;
 
 @mixin round-corners {
   -webkit-border-radius: 5px;

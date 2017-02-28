@@ -105,11 +105,42 @@ p {
   .gray-box p {
     margin-bottom: 0; }
 
+section.portfolio-project-features .image-slider {
+  text-align: center; }
+  section.portfolio-project-features .image-slider img {
+    margin-bottom: 20px; }
+section.portfolio-project-features ul.portfolio-highlights {
+  margin-left: 20px; }
+  section.portfolio-project-features ul.portfolio-highlights li {
+    list-style-type: disc;
+    list-style-color: #4eb1bc;
+    font-size: .8em; }
+
+section.portfolio-project-info img {
+  margin: 0 auto;
+  width: 250px;
+  display: block;
+  margin-bottom: 25px; }
+
 ul#portfolio-links li {
   text-align: center;
   margin-bottom: 25px; }
 ul#portfolio-links img {
   height: 45px; }
+
+ul.slider-btns {
+  display: inline-block; }
+  ul.slider-btns li {
+    color: #4eb1bc;
+    float: left;
+    padding: 12.5px 25px;
+    cursor: pointer;
+    font-weight: bold; }
+    ul.slider-btns li:first-child {
+      border-right: 3px solid #4eb1bc; }
+    ul.slider-btns li:hover {
+      background: #4eb1bc;
+      color: white; }
 
 .btn {
   -webkit-border-radius: 5px;

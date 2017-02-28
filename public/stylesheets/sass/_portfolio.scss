@@ -1,3 +1,32 @@
+section.portfolio-project-features {
+  .image-slider {
+    text-align: center;
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  ul.portfolio-highlights {
+    margin-left: 20px;
+
+    li {
+      list-style-type: disc;
+      list-style-color: $link-color;
+      font-size: .8em;
+    }
+  }
+}
+
+section.portfolio-project-info {
+  img {
+    margin: 0 auto;
+    width: 250px;
+    display: block;
+    margin-bottom: $margin;
+  }
+}
+
 ul#portfolio-links {
   li {
     text-align: center;
@@ -5,5 +34,26 @@ ul#portfolio-links {
   }
   img {
     height: 45px;
+  }
+}
+
+ul.slider-btns {
+  display: inline-block;
+
+  li {
+    color: $link-color;
+    float: left;
+    padding: $margin/2 $margin;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:first-child {
+      border-right: 3px solid $link-color;
+    }
+
+    &:hover {
+      background: $link-color;
+      color: white;
+    }
   }
 }

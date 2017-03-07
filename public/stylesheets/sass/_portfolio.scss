@@ -2,6 +2,38 @@ section.portfolio-project-features {
   .image-slider {
     text-align: center;
 
+    .slide-container {
+      width: 680px;
+      height: 385px;
+      position: absolute;
+      background-repeat: repeat-x;
+      margin: 10px;
+
+      &#gradester {
+        background-image: url("/images/portfolio/gradester-slides.jpg");
+      }
+
+      &#idproxy {
+        background-image: url("/images/portfolio/idproxy-slides.jpg");
+      }
+
+      &#haggleit {
+        background-image: url("/images/portfolio/haggleit-slides.jpg");
+      }
+
+      &#neprofile {
+        background-image: url("/images/portfolio/neprofile-slides.jpg");
+      }
+
+      &#neaccess {
+        background-image: url("/images/portfolio/neaccess-slides.jpg");
+      }
+
+      &#journalbooks {
+        background-image: url("/images/portfolio/journalbooks-slides.jpg");
+      }
+    }
+
     img {
       margin-bottom: 20px;
     }
@@ -13,7 +45,6 @@ section.portfolio-project-features {
     li {
       list-style-type: disc;
       list-style-color: $link-color;
-      font-size: .8em;
     }
   }
 }
@@ -21,7 +52,7 @@ section.portfolio-project-features {
 section.portfolio-project-info {
   img {
     margin: 0 auto;
-    width: 250px;
+    max-height: 80px;
     display: block;
     margin-bottom: $margin;
   }
@@ -34,6 +65,73 @@ ul#portfolio-links {
   }
   img {
     height: 45px;
+  }
+}
+
+ul.technology-list {
+  li {
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 10px 10px 0;
+    float: left;
+    @include round-corners;
+
+    &.ruby, &.jruby, &.rails, &.mssql {
+      background: #980c02;
+    }
+
+    &.unicorn {
+      background: #cd86b9;
+    }
+
+    &.puma {
+      background: #0097c1
+    }
+
+    &.iis {
+      background: #00abf3;
+    }
+
+    &.mysql {
+      background: #00546b;
+    }
+
+    &.postgresql, &.authorizenet {
+      background: #336993
+    }
+
+    &.sidekiq {
+      background: #b1003e;
+    }
+
+    &.redis{
+      background: #d82a20;
+    }
+
+    &.nginx {
+      background: #00984a;
+    }
+
+    &.capistrano {
+      background: #282652;
+    }
+
+    &.amazon {
+      background: #ff9900;
+    }
+
+    &.stripe {
+      background: #6772e5;
+    }
+
+    &.tangocard {
+      background: #f26522;
+    }
+
+    &.raygun {
+      background: #681096;
+    }
   }
 }
 

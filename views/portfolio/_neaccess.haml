@@ -1,18 +1,28 @@
 %section.portfolio-project-info
   %img{ src: '/images/portfolio/neaccess.png' }
-  %p Haggleit is an ecommerce focused application that allows sellers to embedd a haggle button on their website, so that customers can partake in a haggling process for big ticket products. The app provides the platform for sellers and buyers to haggle back and forth until an agreed upon price and shipping method are found. Haggleit also provides basic analytics and product management for sellers.
+  %p
+    NEAccess is an add on for
+    %a{ href: '/portfolio/neprofile' } NEProfile
+    that allows for third-party delegated administration and self onboarding, and management. This application was built so that the businesses using NEProfile could enable contractors, consultants, and other contingent workers to self-manage, taking the responsibility off of the business. NEAccess allows clients to build and customize on-boarding, management, and authentication workflows to dictate business requirements within the organization.
 %section.portfolio-project-features
   .image-slider
+    .slide-container#neaccess
     %img{ src: '/images/portfolio/computer.png' }
     %ul.slider-btns
-      %li prev
-      %li next
-  %h2 Features & Highlights
+      %li.prev-btn prev
+      %li.next-btn next
+  %h2 Highlights
   %ul.portfolio-highlights
-    %li Subscription plan monetization using Active Merchant with Authorize.net.
-    %li Stripe API integration for sellers to allow them to capture payments through haggleit.
-    %li Embeddable javascript tag that renders the haggling button on external applications.
-    %li Amazon SES integration for notifications.
-    %li Raygun integration for performance and error monitoring.
-    %li Devise used for seller and buyer authentication.
-    %li Capistrano deployment to Digital Ocean.
+    %li Responsible for the entire design and most of the development of the application to the point of MVP release.
+    %li Worked on integration with various LDAP data stores including OpenLDAP, ApacheDS, and ActiveDirectory.
+    %li Developed portal based roles and permissions to define permitted behavior by users within the application.
+    %li Designed and developed customizable authentication workflows (state machine) that allow clients to build their own MFA processes.
+    %li
+      Designed and created customizable registration workflows that allow for interaction between NEAccess and
+      %a{ href: '/portfolio/neprofile' } NEProfile
+      users.
+    %li
+      Integrated the application with a Rails engine shared with
+      %a{ href: '/portfolio/neprofile' } NEProfile
+      to provide common functionality.
+  = haml :'portfolio/_seczetta_tech_list'

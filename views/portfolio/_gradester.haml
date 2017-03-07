@@ -1,18 +1,30 @@
 %section.portfolio-project-info
   %img{ src: '/images/portfolio/gradester.png' }
-  %p Haggleit is an ecommerce focused application that allows sellers to embedd a haggle button on their website, so that customers can partake in a haggling process for big ticket products. The app provides the platform for sellers and buyers to haggle back and forth until an agreed upon price and shipping method are found. Haggleit also provides basic analytics and product management for sellers.
+  %p Gradester is a goal based motivational application that is centered around education. The application lets students collaborate with parents and other sponsors, by setting goals for themselves that result in some type of reward. The application is currently in a closed beta status.
 %section.portfolio-project-features
   .image-slider
+    .slide-container#gradester
     %img{ src: '/images/portfolio/computer.png' }
     %ul.slider-btns
-      %li prev
-      %li next
+      %li.prev-btn prev
+      %li.next-btn next
   %h2 Features & Highlights
   %ul.portfolio-highlights
-    %li Subscription plan monetization using Active Merchant with Authorize.net.
-    %li Stripe API integration for sellers to allow them to capture payments through haggleit.
-    %li Embeddable javascript tag that renders the haggling button on external applications.
-    %li Amazon SES integration for notifications.
-    %li Raygun integration for performance and error monitoring.
-    %li Devise used for seller and buyer authentication.
-    %li Capistrano deployment to Digital Ocean.
+    %li Responsible for the entire design and development of the application to the point of beta release.
+    %li Built an OAuth based social authentication to allow users to sign up with Google + and Facebook.
+    %li Developed an integration with the Stripe API for students to add bank accounts, and receive rewards from sponsors.
+    %li Developed an integration with TangoCards API, to allow sponsors to reward students with gift cards.
+    %li Designed and developed an event notification system for users to receive in-app alerts, and notifications.
+    %li Designed and developed a goal creation and tracking system that allowed users to collaborate on goals.
+  %h2 Key Technologies
+  %ul.technology-list
+    %li.ruby Ruby
+    %li.rails Rails
+    %li.postgresql PostgreSQL
+    %li.unicorn Unicorn
+    %li.nginx Nginx
+    %li.capistrano Capistrano
+    %li.stripe Stripe
+    %li.tangocard Tango Card
+    %li.amazon Amazon SES
+    %li.amazon Amazon S3

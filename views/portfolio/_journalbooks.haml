@@ -1,18 +1,30 @@
 %section.portfolio-project-info
   %img{ src: '/images/portfolio/journalbooks.png' }
-  %p Haggleit is an ecommerce focused application that allows sellers to embedd a haggle button on their website, so that customers can partake in a haggling process for big ticket products. The app provides the platform for sellers and buyers to haggle back and forth until an agreed upon price and shipping method are found. Haggleit also provides basic analytics and product management for sellers.
+  %p Journalbooks is a promotional products company that specializes in branding journals and other types of stationary products. This application serves as a product catalog and pricing guideline for promotional product distributors. It also allows distributors to track orders, quotes and more from the account section of the application.
 %section.portfolio-project-features
   .image-slider
+    .slide-container#journalbooks
     %img{ src: '/images/portfolio/computer.png' }
     %ul.slider-btns
-      %li prev
-      %li next
-  %h2 Features & Highlights
+      %li.prev-btn prev
+      %li.next-btn next
+  %h2 Highlights
   %ul.portfolio-highlights
-    %li Subscription plan monetization using Active Merchant with Authorize.net.
-    %li Stripe API integration for sellers to allow them to capture payments through haggleit.
-    %li Embeddable javascript tag that renders the haggling button on external applications.
-    %li Amazon SES integration for notifications.
-    %li Raygun integration for performance and error monitoring.
-    %li Devise used for seller and buyer authentication.
-    %li Capistrano deployment to Digital Ocean.
+    %li Completely redesigned and rebuilt the applications front-end layout.
+    %li Brought the code base up from Rails 3 to Rails 4.
+    %li Designed and helped develop a customer order notification system.
+    %li Worked on integration with a legacy Inventory and Order Management System to allow customers to track and manage orders through the application.
+    %li Made numerous enhancements to the application admin, to allow for better internal management.
+  %h2 Key Technologies
+  %ul.technology-list
+    %li.ruby Ruby
+    %li.rails Rails
+    %li.mysql MySQL
+    %li.sidekiq Sidekiq
+    %li.redis Redis
+    %li.unicorn Unicorn
+    %li.nginx Nginx
+    %li.capistrano Capistrano
+    %li.amazon Amazon SES
+    %li.amazon Amazon S3
+

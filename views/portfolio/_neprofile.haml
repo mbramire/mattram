@@ -1,18 +1,22 @@
 %section.portfolio-project-info
   %img{ src: '/images/portfolio/neprofile.png' }
-  %p Haggleit is an ecommerce focused application that allows sellers to embedd a haggle button on their website, so that customers can partake in a haggling process for big ticket products. The app provides the platform for sellers and buyers to haggle back and forth until an agreed upon price and shipping method are found. Haggleit also provides basic analytics and product management for sellers.
+  %p NEProfile is an on-premise enterprise application that helps companies of any size manage the business processes related to a contingent workforce. The application allows designated administrators to create and customize workflows, forms, attributes, and notifications to fit any business requirements involving the onboarding, offboarding, and management of non-employees. NEProfile is currently being used by multiple well known successful corporations.
 %section.portfolio-project-features
   .image-slider
+    .slide-container#neprofile
     %img{ src: '/images/portfolio/computer.png' }
     %ul.slider-btns
-      %li prev
-      %li next
-  %h2 Features & Highlights
+      %li.prev-btn prev
+      %li.next-btn next
+  %h2 Highlights
   %ul.portfolio-highlights
-    %li Subscription plan monetization using Active Merchant with Authorize.net.
-    %li Stripe API integration for sellers to allow them to capture payments through haggleit.
-    %li Embeddable javascript tag that renders the haggling button on external applications.
-    %li Amazon SES integration for notifications.
-    %li Raygun integration for performance and error monitoring.
-    %li Devise used for seller and buyer authentication.
-    %li Capistrano deployment to Digital Ocean.
+    %li Responsible for the entire design and development of the application to the point of MVP release.
+    %li Developed LDAP integration with Active Directory for authentication.
+    %li Built fully customizable role-based permissions scheme.
+    %li Designed an EAV database design to allow for a deep level of configuration by the client.
+    %li Created a Rails engine to allow for shared functionality between other applications.
+    %li Designed and built a customizable workflow state machine that executes processes based on business logic and conditions.
+    %li Designed and developed features to allow for business users to design application pages, notifications, and forms.
+    %li Worked on Liquid template integration with any customizable pages and notifications within the application.
+    %li Worked on a token based restful API built specifically for integrations with other data sources.
+  = haml :'portfolio/_seczetta_tech_list'

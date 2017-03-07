@@ -1,18 +1,17 @@
 %section.portfolio-project-info
   %img{ src: '/images/portfolio/idproxy.png' }
-  %p Haggleit is an ecommerce focused application that allows sellers to embedd a haggle button on their website, so that customers can partake in a haggling process for big ticket products. The app provides the platform for sellers and buyers to haggle back and forth until an agreed upon price and shipping method are found. Haggleit also provides basic analytics and product management for sellers.
+  %p Many businesses, including universities, hospitals, and banks, struggle with the same identities moving through various sources of data within the organization. This can cause many issues downstream to other business systems. IDProxy imports all of that data, and through a proprietary algorithm and scoring system, is able to match similar records together, and attach them to a single master identity. This helps clients manage the entire life-cycle of a person within their systems, and helps avoid many of the integration issues involved with duplicate identities.
 %section.portfolio-project-features
   .image-slider
+    .slide-container#idproxy
     %img{ src: '/images/portfolio/computer.png' }
     %ul.slider-btns
-      %li prev
-      %li next
-  %h2 Features & Highlights
+      %li.prev-btn prev
+      %li.next-btn next
+  %h2 Highlights
   %ul.portfolio-highlights
-    %li Subscription plan monetization using Active Merchant with Authorize.net.
-    %li Stripe API integration for sellers to allow them to capture payments through haggleit.
-    %li Embeddable javascript tag that renders the haggling button on external applications.
-    %li Amazon SES integration for notifications.
-    %li Raygun integration for performance and error monitoring.
-    %li Devise used for seller and buyer authentication.
-    %li Capistrano deployment to Digital Ocean.
+    %li Responsible for the entire design and development of the application to the point of MVP release.
+    %li Designed and developed an algorithm, that uses an attribute scoring system and threshold, to match similar records together.
+    %li Designed and built a holding tank system, to allow users to make manual decisions on potential matches, and duplicates.
+    %li Designed and developed a polling system that will update data import progress percentages within the application asynchronously by talking to Sidekiq.
+  = haml :'portfolio/_seczetta_tech_list'

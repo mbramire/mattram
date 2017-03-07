@@ -38,17 +38,3 @@
 
 - unless @homepage.present?
   .content-wrapper.image-bg.nav-chrome
-:javascript
-  $(document).ready(function(){
-    $("#add-drop").hover(function(){
-      $('#drop-down').stop().slideDown();
-      } , function(){
-      $('#drop-down').delay(0100).slideUp();
-    });
-
-    $("li[id^='list-item-']").hover(function(){
-      $('#drop-down').clearQueue();
-      } , function(){
-      $('#drop-down').delay(0100).slideUp();
-    });
-  });

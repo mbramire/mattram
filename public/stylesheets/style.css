@@ -107,18 +107,35 @@ p {
 
 section.portfolio-project-features .image-slider {
   text-align: center; }
+  section.portfolio-project-features .image-slider .slide-container {
+    width: 680px;
+    height: 385px;
+    position: absolute;
+    background-repeat: repeat-x;
+    margin: 10px; }
+    section.portfolio-project-features .image-slider .slide-container#gradester {
+      background-image: url("/images/portfolio/gradester-slides.jpg"); }
+    section.portfolio-project-features .image-slider .slide-container#idproxy {
+      background-image: url("/images/portfolio/idproxy-slides.jpg"); }
+    section.portfolio-project-features .image-slider .slide-container#haggleit {
+      background-image: url("/images/portfolio/haggleit-slides.jpg"); }
+    section.portfolio-project-features .image-slider .slide-container#neprofile {
+      background-image: url("/images/portfolio/neprofile-slides.jpg"); }
+    section.portfolio-project-features .image-slider .slide-container#neaccess {
+      background-image: url("/images/portfolio/neaccess-slides.jpg"); }
+    section.portfolio-project-features .image-slider .slide-container#journalbooks {
+      background-image: url("/images/portfolio/journalbooks-slides.jpg"); }
   section.portfolio-project-features .image-slider img {
     margin-bottom: 20px; }
 section.portfolio-project-features ul.portfolio-highlights {
   margin-left: 20px; }
   section.portfolio-project-features ul.portfolio-highlights li {
     list-style-type: disc;
-    list-style-color: #4eb1bc;
-    font-size: .8em; }
+    list-style-color: #4eb1bc; }
 
 section.portfolio-project-info img {
   margin: 0 auto;
-  width: 250px;
+  max-height: 80px;
   display: block;
   margin-bottom: 25px; }
 
@@ -127,6 +144,44 @@ ul#portfolio-links li {
   margin-bottom: 25px; }
 ul#portfolio-links img {
   height: 45px; }
+
+ul.technology-list li {
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 10px 10px 0;
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  ul.technology-list li.ruby, ul.technology-list li.jruby, ul.technology-list li.rails, ul.technology-list li.mssql {
+    background: #980c02; }
+  ul.technology-list li.unicorn {
+    background: #cd86b9; }
+  ul.technology-list li.puma {
+    background: #0097c1; }
+  ul.technology-list li.iis {
+    background: #00abf3; }
+  ul.technology-list li.mysql {
+    background: #00546b; }
+  ul.technology-list li.postgresql, ul.technology-list li.authorizenet {
+    background: #336993; }
+  ul.technology-list li.sidekiq {
+    background: #b1003e; }
+  ul.technology-list li.redis {
+    background: #d82a20; }
+  ul.technology-list li.nginx {
+    background: #00984a; }
+  ul.technology-list li.capistrano {
+    background: #282652; }
+  ul.technology-list li.amazon {
+    background: #ff9900; }
+  ul.technology-list li.stripe {
+    background: #6772e5; }
+  ul.technology-list li.tangocard {
+    background: #f26522; }
+  ul.technology-list li.raygun {
+    background: #681096; }
 
 ul.slider-btns {
   display: inline-block; }
@@ -332,7 +387,8 @@ section {
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("/images/main-logo.png");
-    background-image: url("/images/main-logo.svg"); }
+                                                /*// falback for < IE 9
+background-image: url("/images/main-logo.svg");*/ }
   .header li {
     float: right;
     padding: 25px 20px;

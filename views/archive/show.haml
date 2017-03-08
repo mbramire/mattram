@@ -1,11 +1,11 @@
 .content-wrapper
-  .row
+  %section
     %h1
       = @category.title
       Posts
     - if @category.posts.empty?
       %p
-        Sorry, nothing written for this category just yet, but trust me I've got my best man on it! 
+        Sorry, nothing written for this category just yet, but trust me I've got my best man on it!
     - else
       - @category.posts.each do |p|
-        = haml :"/posts/_post_preview", locals: {post: p}  
+        = haml :"/posts/_post_preview", locals: {post: p}

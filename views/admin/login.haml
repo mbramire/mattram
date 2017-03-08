@@ -1,9 +1,9 @@
 .content-wrapper
-  .row
+  %section
     - if @errors.present?
       %ul.error-list
         %li
-          %i.fa.fa-exclamation-triangle 
+          %i.fa.fa-exclamation-triangle
           = @errors
       %br
 
@@ -17,7 +17,7 @@
         %input{ type: "text", name: "username" }
       %div
         %label{ for: "password" }
-          Password: 
+          Password:
         %input{ type: "password", name: "password" }
       %div
         %input.btn{ type: "submit", value: "Login" }

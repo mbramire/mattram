@@ -1,14 +1,14 @@
 .content-wrapper
-  .row
+  %section
     .span-5
-      %h2 
+      %h2
         Posts
       %ul
         - @posts.each do |post|
           %li
             %a{ href: "/admin/posts/#{post.id}/edit" }
               %img.sml-icon{ src: "#{post.category.image}"}
-              = post.title 
+              = post.title
             %br
             %span.tiny-txt
               = pretty_date(post.created_at)
@@ -16,18 +16,18 @@
               %a{ href: "/posts/#{post.id}"}
                 View
 
-      %a.btn{ href: "/admin/posts/new" } 
+      %a.btn{ href: "/admin/posts/new" }
         New Post
     .span-3
-      %h2 
+      %h2
         Categories
-      
+
       %ul
         - @categories.each do |cat|
           %li
             %a{ href: "/admin/categories/#{cat.id}/edit" }
               %img.sml-icon{ src: "#{cat.image}" }
-              = cat.title 
+              = cat.title
 
-      %a.btn{ href: "/admin/categories/new" } 
+      %a.btn{ href: "/admin/categories/new" }
         New Category

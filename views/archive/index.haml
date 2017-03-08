@@ -1,6 +1,6 @@
 .content-wrapper
-  .row
+  %section
     %h1
       All Posts
     - @posts.each do |p|
-      = haml :"/posts/_post_preview", locals: {post: p}  
+      = haml :"/posts/_post_preview", locals: {post: p}

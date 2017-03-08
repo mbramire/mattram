@@ -6,3 +6,14 @@ body {
   background-position: bottom center;
   color: white;
 }
+
+.teal-bg-pattern{
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.nav-chrome {
+  height: 25px;
+}

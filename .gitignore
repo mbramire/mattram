@@ -16,6 +16,8 @@
 # Never, ever store the secrets of .env
 .env
 
-/.sass-cache
+.sass-cache
+/public/stylesheets/.sass-cache
+*.scssc
 
 

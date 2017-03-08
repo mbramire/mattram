@@ -67,6 +67,15 @@ body {
   background-position: bottom center;
   color: white; }
 
+.teal-bg-pattern {
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.nav-chrome {
+  height: 25px; }
+
 /* typography */
 body {
   font-family: 'Titillium Web', sans-serif;
@@ -273,9 +282,6 @@ textarea {
   color: #ad0000;
   float: left; }
 
-section {
-  margin-top: 40px; }
-
 .gray-box {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -311,24 +317,20 @@ section {
   width: 100%;
   background: white;
   color: black;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  padding: 25px 0 50px 0; }
   .content-wrapper.black-bg {
     background: black; }
   .content-wrapper.gray-bg {
     background: #1e1e1e;
     color: white; }
-  .content-wrapper.image-bg {
-    background-image: url("/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; }
   .content-wrapper.nav-chrome {
     height: 20px; }
 
-.row {
+.row, section {
   width: 750px;
   margin: 0 auto;
-  padding: 40px 25px;
+  padding: 25px;
   overflow: auto; }
 
 .span-1 {
@@ -470,29 +472,29 @@ background-image: url("/images/main-logo.svg");*/ }
       .footer .social-icon.linked:hover {
         background-position: 0 -48px; }
 
-.banner {
+#banner {
   text-align: center;
   height: 350px;
   font-weight: 200; }
-  .banner .name {
+  #banner .name {
     font-size: 2.5em;
     color: white; }
-  .banner .tagline {
+  #banner .tagline {
     font-size: 1.2em;
     color: white; }
-  .banner .banner-icons {
+  #banner .banner-icons {
     margin: 0 auto 20px;
     height: 91px;
     background-repeat: no-repeat;
     background-position: 40px center;
     background-image: url("/images/banner-icons.png");
     background-image: url("/images/banner-icons.svg"); }
-  .banner .banner-txt-cont {
+  #banner .banner-txt-cont {
     width: 555px;
     line-height: 1em;
     margin: 0 auto;
     padding-top: 73px; }
-  .banner #banner-portrait {
+  #banner #banner-portrait {
     background-image: url("/images/portrait.png");
     background-repeat: no-repeat;
     background-position: center center;
